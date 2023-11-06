@@ -1,9 +1,11 @@
+import os
 import pandas as pd
 from parse_csv import parse_csv
-from resolution import resolution
+from calc_resolution import calc_resolution
+from group_data_by_time import group_data_by_time
 
 def main():
-    
+    os.system('cls')
 
     # Specify the file to read
     master_path = 'utils/example.csv'
@@ -11,12 +13,14 @@ def main():
     # Parse the data
     master_data = parse_csv(master_path)
 
-    # Find the biggest gap in resolution
-    largest_gap_str = resolution(master_data)
+     # Find the biggest gap in resolution
+    resolution = calc_resolution(master_data)
+    #Remove the extra column added by calc_resolution to master_data for calculating
+    master_data = master_data.drop('time_diff', axis=1)
+    
+    # Group the data by time and dump it as a JSON
+    group_data_by_time(master_data)
 
-    # Print the largest gap
-    print(f"The biggest resolution is: {largest_gap_str} in HH:MM:SS")
-    print(f"The Resolution in simulation is = {largest_gap_str}")
-
+    # print(master_data)
 if __name__ == "__main__":
     main()
