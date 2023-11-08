@@ -1,0 +1,5 @@
+# IGNOORE PYCACHE
+src/__pycache__
+
+#UTILS for all the print outs to be investigated
+utils
