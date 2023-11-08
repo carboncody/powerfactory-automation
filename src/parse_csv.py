@@ -10,6 +10,6 @@ def parse_csv(file_path):
     
     # Sort the data by time
     master_data = master_data.sort_values('tid')
-    print("Parsing done")
+    print("Raw data parsing done")
     return master_data
-   
+    

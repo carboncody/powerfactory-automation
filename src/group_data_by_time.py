@@ -1,4 +1,3 @@
-import pandas as pd
 import json
 
 def group_data_by_time(data):
@@ -18,5 +17,4 @@ def group_data_by_time(data):
     with open('grouped_data.json', 'w') as json_file:
         json_file.write(grouped_json)
     
-    print(f"Data saved to grouped_data.json")
-    
+    return grouped_data
