@@ -24,8 +24,8 @@ def main():
     master_data = master_data.drop('time_diff', axis=1)
   
     
-    # # Group the data by time and dump it as a JSON
-    # timely_grouped_json = group_data_by_time(master_data)
+    # Group the data by time and dump it as a JSON
+    timely_grouped_json = group_data_by_time(master_data)
     # print(f"Data saved to grouped_data.json")
    
     
