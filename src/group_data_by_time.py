@@ -1,4 +1,3 @@
-import pandas as pd
 import json
 
 def group_data_by_time(data):
@@ -12,11 +11,10 @@ def group_data_by_time(data):
     grouped_data = {str(key): group.to_dict('records') for key, group in grouped}
     
     # Convert the dictionary to a JSON string using the custom handler
-    grouped_json = json.dumps(grouped_data, indent=4)
+    grouped_json = json.dumps(grouped_data, indent=4,ensure_ascii=False)
     
     # Save the JSON string to a file
-    with open('grouped_data.json', 'w') as json_file:
+    with open('utils/grouped_data.json', 'w', encoding='utf-8') as json_file:
         json_file.write(grouped_json)
     
-    print(f"Data saved to grouped_data.json")
-    
+    return grouped_data

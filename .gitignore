@@ -1,0 +1,6 @@
+# Ignore the utils folder
+utils/
+
+# Ignore Python compiled files and __pycache__ directories
+src/__pycache__
+*.pyc

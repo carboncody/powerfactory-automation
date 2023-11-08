@@ -11,9 +11,5 @@ def calc_resolution(master_data):
         largest_gap_str = str(largest_gap).split(' days ')[-1]
     else:
         largest_gap_str = str(largest_gap)
-        
-     # Print the largest gap
-    print(f"The biggest resolution is: {largest_gap_str} in HH:MM:SS")
-    print(f"The Resolution in simulation is = {largest_gap_str}")
     
     return largest_gap_str 
