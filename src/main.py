@@ -29,8 +29,10 @@ def main():
     # print(f"Data saved to grouped_data.json")
    
     
-    df = busbar_pos(master_data, 'output.csv')
+    df = busbar_pos(master_data, 'utils\output.csv')
 
     # print(master_data)
 if __name__ == "__main__":
     main()
+    
+    

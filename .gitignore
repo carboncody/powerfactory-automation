@@ -1,5 +1,6 @@
-# IGNOORE PYCACHE
-src/__pycache__
+# Ignore the utils folder
+utils/
 
-#UTILS for all the print outs to be investigated
-utils
+# Ignore Python compiled files and __pycache__ directories
+src/__pycache__
+*.pyc
