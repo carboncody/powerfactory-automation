@@ -1,8 +1,8 @@
 import os
-from parse_csv import parse_csv
-from calc_resolution import calc_resolution
-from group_data_by_time import group_data_by_time
-from calc_busbar_pos import calc_busbar_pos
+from process_input.parse_csv import parse_csv
+from process_input.calc_resolution import calc_resolution
+from process_input.group_data_by_time import group_data_by_time
+from process_input.calc_busbar_pos import calc_busbar_pos
 
 def main():
     os.system('cls')
