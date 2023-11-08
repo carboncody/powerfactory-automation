@@ -1,6 +1,6 @@
 import pandas as pd
 
-def busbar_pos(master_data, csv_file_path):
+def calc_busbar_pos(master_data, csv_file_path):
     
     print("\nStarting Processing")
     

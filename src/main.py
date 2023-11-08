@@ -2,7 +2,7 @@ import os
 from parse_csv import parse_csv
 from calc_resolution import calc_resolution
 from group_data_by_time import group_data_by_time
-from busbar_pos import busbar_pos
+from calc_busbar_pos import calc_busbar_pos
 
 def main():
     os.system('cls')
