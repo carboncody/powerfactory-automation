@@ -2,7 +2,7 @@ import pandas as pd
 
 def calc_busbar_pos(master_data, csv_file_path):
     
-    print("\nStarting Processing")
+    print("\nStarting calculations of busbar positions")
     
     # Remove duplicates based on 'km', 'BTR', and 'spor' but ignore 'id'
     unique_data = master_data.drop_duplicates(subset=['km', 'BTR', 'spor'], keep='first')
