@@ -4,3 +4,7 @@ utils/
 # Ignore Python compiled files and __pycache__ directories
 src/__pycache__
 *.pyc
+
+
+# Ignore Python compiled files and __pycache__ directories
+src/process_input/__pycache__
