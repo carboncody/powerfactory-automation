@@ -3,7 +3,7 @@ from process_input.parse_csv import parse_csv
 from process_input.calc_resolution import calc_resolution
 from process_input.group_data_by_time import group_data_by_time
 from process_input.calc_kms import calc_kms
-from pf_sim_run.init_PF import init_PF
+from pf_sim_run.init_pf import init_pf
 from process_input.calc_busbar_pos import calc_busbar_pos
 
 def main():
@@ -32,6 +32,10 @@ def main():
    
     km_df = calc_kms(master_data, 'utils/km_pos.csv')
     busbar_pos_df= calc_busbar_pos(km_df)
+    
+    [app, project] = init_pf()
+    
+    del app
     
 if __name__ == "__main__":
     main()
