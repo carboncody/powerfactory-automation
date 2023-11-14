@@ -8,3 +8,4 @@ src/__pycache__
 
 # Ignore Python compiled files and __pycache__ directories
 src/process_input/__pycache__
+src/pf_sim_run/__pycache__
