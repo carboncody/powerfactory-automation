@@ -1,5 +1,24 @@
 import pandas as pd
 
+# This file takes the km values and calculates the busbar positions for pf
+
+# This is how it converts -
+# 1 -> SYGAAENDE
+# 2 -> NORDGAAENDE
+
+# FOR EXAMPLE --------------
+# 82-034.650-K-2-O1-O1
+# 82 -> BTR
+# 034.650 KM
+# K - KØRELEDNINGER
+# R - RETURN VEJ
+# 2 -> SPOR
+
+# so for example -
+# 47641,18.727,85,Nordgaaende
+# will become-
+# 47641,18.727,85,Nordgaaende,85-018.727-K-2,85-018.727-R-2
+
 def calc_busbar_pos(km_df):
     # Ensure that km is treated as float
     km_df['km'] = km_df['km'].astype(float)
