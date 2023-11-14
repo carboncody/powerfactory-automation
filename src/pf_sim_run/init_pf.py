@@ -1,7 +1,8 @@
-import sys; 
-# Path to PowerFactory
-sys.path.append(r"C:\Program Files\DIgSILENT\PowerFactory 2023\Python\3.9")
-# Import as a system import
+import sys
+import globals
+
+# Import pf from system path
+sys.path.append(globals.pf_path)
 import powerfactory as pf
 
 def init_pf():
@@ -15,7 +16,7 @@ def init_pf():
         project = app.GetActiveProject()
         # print(projName + ' activated')
         
-        return [app, project]
+        return app
     except pf.ExitError as error:
         print(error)
         print('error.code = %d' % error.code)

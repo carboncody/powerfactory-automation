@@ -1,4 +1,4 @@
-def get_project_status(app):
+def get_project_state(app):
     existing_busbars = app.GetCalcRelevantObjects("*.ElmTerm")
     existing_busbar_fullnames = [busbar.GetFullName() for busbar in existing_busbars]
     existing_busbar_names = [busbar.GetNodeName() for busbar in existing_busbars]
