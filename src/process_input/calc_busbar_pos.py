@@ -1,17 +1,21 @@
 import pandas as pd
 
-def calc_busbar_pos(master_data, csv_file_path):
+def calc_busbar_pos(km_df):
+    # Ensure that km is treated as float
+    km_df['km'] = km_df['km'].astype(float)
+
+    # Function to format km value as required
+    def format_km(km):
+        return "{:07.3f}".format(km)
+
+    # Function to determine the value of 'spor'
+    def spor_value(spor):
+        return '2' if 'ord' in spor else '1'
+
+    # Applying the functions to create new columns
+    km_df['koerledning_pos'] = km_df.apply(lambda x: f"{x['BTR']}-{format_km(x['km'])}-K-{spor_value(x['spor'])}", axis=1)
+    km_df['retur_pos'] = km_df.apply(lambda x: f"{x['BTR']}-{format_km(x['km'])}-R-{spor_value(x['spor'])}", axis=1)
+
+    km_df.to_csv('utils/busbar_pos.csv', index=False, header=True, encoding='utf-8-sig')
     
-    print("\nStarting calculations of busbar positions")
-    
-    # Remove duplicates based on 'km', 'BTR', and 'spor' but ignore 'id'
-    unique_data = master_data.drop_duplicates(subset=['km', 'BTR', 'spor'], keep='first')
-    
-    # Select only the required columns, excluding 'id' if it's not needed
-    # Include 'id' if it is needed in the output
-    processed_data = unique_data[['id', 'km', 'BTR', 'spor']].copy()
-    
-    # Write the processed DataFrame to a CSV file
-    processed_data.to_csv(csv_file_path, index=False, header=True, encoding='utf-8-sig')
-    
-    print(f"\nProcessed data saved to {csv_file_path}")
+    return km_df
