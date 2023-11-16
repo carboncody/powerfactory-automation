@@ -1,8 +1,10 @@
 def get_project_state(app):
+    # Get existing busbars
     existing_busbars = app.GetCalcRelevantObjects("*.ElmTerm")
     existing_busbar_fullnames = [busbar.GetFullName() for busbar in existing_busbars]
     existing_busbar_names = [busbar.GetNodeName() for busbar in existing_busbars]
     
+    # Get existing lines
     existing_lines = app.GetCalcRelevantObjects("*.ElmLne")
     existing_lines_fullname = [line.GetFullName() for line in existing_lines]
     existing_line_names = []
@@ -11,3 +13,5 @@ def get_project_state(app):
         if len(parts) > 1:
             extracted_string = parts[-1].split('.ElmLne')[0]
             existing_line_names.append(extracted_string)
+            
+    return [existing_busbar_names, existing_line_names]
