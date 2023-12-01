@@ -7,7 +7,16 @@ def get_project_state(app):
     
     # Get existing lines
     existing_lines = app.GetCalcRelevantObjects("*.ElmLne")
-    existing_lines_fullname = [line.GetFullName() for line in existing_lines]
+    
+    filtered_types = ['koereledning','uic60']
+
+    existing_lines_fullname = []
+    for line in existing_lines:
+        type = str(line.GetType()).lower()
+        # Check if any element in filtered_types is a substring in type
+        if any(ftype in type for ftype in filtered_types):
+            existing_lines_fullname.append(line.GetFullName())
+
     existing_line_names = []
     for fullname in existing_lines_fullname:
         parts = fullname.rsplit('\\', 1)
