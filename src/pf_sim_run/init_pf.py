@@ -14,9 +14,10 @@ def init_pf():
         # activate project
         app.ActivateProject(projName)
         project = app.GetActiveProject()
-        # print(projName + ' activated')
+        print(projName + ' activated')
         
         return app
+    
     except pf.ExitError as error:
         print(error)
         print('error.code = %d' % error.code)

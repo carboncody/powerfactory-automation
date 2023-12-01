@@ -6,8 +6,8 @@ def main():
     os.system('cls')
     print("-----------------------------------------------------")
 
-    [timely_grouped_json, busbar_pos_df] = process_input()  
-    [app, project] = pf_sim_run()
+    # [timely_grouped_json, busbar_pos_df] = process_input()     # MOMENTARILY COMMENTED OUT FOR TESTING PURPOSES
+    app = pf_sim_run()  # busbar_pos_df
     
     del app
     

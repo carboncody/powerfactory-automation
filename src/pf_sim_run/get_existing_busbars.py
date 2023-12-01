@@ -35,5 +35,7 @@ def get_existing_busbars(project_busbar_names, busbar_pos_df):
     
     print("\nMatching busbars found: ", len(matched_busbar_df))
     
+    print("\nBusbars to be added: ", len(busbar_pos_tobe_added_df) - len(matched_busbar_df))
+    
     return matched_busbar_df
     
