@@ -1,8 +1,8 @@
 import pandas as pd
 
-def get_existing_busbars(project_busbar_names, busbar_pos_df):
-    pd.DataFrame(project_busbar_names).to_csv('utils/project_busbar_names.csv', index=False, header=True, encoding='utf-8-sig')
-    print("\nBusbars in project saved to utils/project_busbar_names.csv")
+def skip_existing_busbars(project_busbar_names, busbar_pos_df):
+    # pd.DataFrame(project_busbar_names).to_csv('utils/existing_busbars.csv', index=False, header=True, encoding='utf-8-sig')
+    print("\nBusbars in project saved to utils/existing_busbars.csv")
     
     # Create DataFrame with busbar_name
     busbar_pos_tobe_added_df = pd.DataFrame({
@@ -28,14 +28,15 @@ def get_existing_busbars(project_busbar_names, busbar_pos_df):
         lambda x: get_matching_busbar_name(x + '-', project_busbar_names)
     )
 
-    # Create new DataFrame with matches
-    matched_busbar_df = busbar_pos_tobe_added_df[busbar_pos_tobe_added_df['is_substring']].drop(columns='is_substring')
-    matched_busbar_df.to_csv('utils/matched_busbar_names.csv', index=False, header=True, encoding='utf-8-sig')
-    print("\nMatching busbars saved to utils/matched_busbar_names.csv")
+    # Create new DataFrame with unqiue busbar positions that need to be added
+    new_busbar_df = busbar_pos_tobe_added_df[~busbar_pos_tobe_added_df['is_substring']].drop(columns='is_substring')
+    # Ensure there are no empty columns in the DataFrame
+    new_busbar_df = new_busbar_df.dropna(axis=1, how='all')
+    # Save the new busbars to be added to utils/busbars_tobeadded.csv
+    # new_busbar_df.to_csv('utils/busbar_tobeadded.csv', index=False, header=True, encoding='utf-8-sig')
+    print("\nBusbars that need to be added: ", len(new_busbar_df))
+    print("\nBusbars that will be added saved to utils/busbar_tobeadded.csv")
+    print("\nExisting busbars found that will not be added: ", len(busbar_pos_tobe_added_df) - len(new_busbar_df))
     
-    print("\nMatching busbars found: ", len(matched_busbar_df))
-    
-    print("\nBusbars to be added: ", len(busbar_pos_tobe_added_df) - len(matched_busbar_df))
-    
-    return matched_busbar_df
+    return new_busbar_df
     
