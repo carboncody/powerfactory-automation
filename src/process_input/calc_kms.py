@@ -12,8 +12,8 @@ def calc_kms(master_data, csv_file_path):
     processed_data = unique_data[['id', 'km', 'BTR', 'spor']].copy()
     
     # Write the processed DataFrame to a CSV file
-    processed_data.to_csv(csv_file_path, index=False, header=True, encoding='utf-8-sig')
+    # processed_data.to_csv(csv_file_path, index=False, header=True, encoding='utf-8-sig')
     
-    print(f"\nProcessed data saved to {csv_file_path}")
+    # print(f"\nProcessed data saved to {csv_file_path}")
     
     return processed_data

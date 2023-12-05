@@ -18,14 +18,11 @@ def get_project_state(app):
             existing_lines_fullname.append(line.GetFullName())
 
     existing_line_names = []
-    for fullname in existing_lines_fullname:
-        parts = fullname.rsplit('\\', 1)
-        if len(parts) > 1:
-            extracted_string = parts[-1].split('.ElmLne')[0]
-            existing_line_names.append(extracted_string)
+    for fullname in existing_lines:
+        existing_line_names.append(fullname.loc_name)
     
-    with open('utils/existing_lines.csv', mode='w', newline='', encoding='utf-8') as file:
-        writer = csv.writer(file)
-        writer.writerows([[item] for item in existing_line_names])
+    # with open('utils/existing_lines.csv', mode='w', newline='', encoding='utf-8') as file:
+    #     writer = csv.writer(file)
+    #     writer.writerows([[item] for item in existing_line_names])
 
-    return [existing_busbar_names, existing_lines, existing_line_names, existing_lines_fullname]
+    return [existing_busbar_names, existing_lines, existing_line_names]

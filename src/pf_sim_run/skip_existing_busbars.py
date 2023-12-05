@@ -1,7 +1,7 @@
 import pandas as pd
 
 def skip_existing_busbars(project_busbar_names, busbar_pos_df):
-    pd.DataFrame(project_busbar_names).to_csv('utils/existing_busbars.csv', index=False, header=True, encoding='utf-8-sig')
+    # pd.DataFrame(project_busbar_names).to_csv('utils/existing_busbars.csv', index=False, header=True, encoding='utf-8-sig')
     print("\nBusbars in project saved to utils/existing_busbars.csv")
     
     # Create DataFrame with busbar_name
@@ -33,7 +33,7 @@ def skip_existing_busbars(project_busbar_names, busbar_pos_df):
     # Ensure there are no empty columns in the DataFrame
     new_busbar_df = new_busbar_df.dropna(axis=1, how='all')
     # Save the new busbars to be added to utils/busbars_tobeadded.csv
-    new_busbar_df.to_csv('utils/busbar_tobeadded.csv', index=False, header=True, encoding='utf-8-sig')
+    # new_busbar_df.to_csv('utils/busbar_tobeadded.csv', index=False, header=True, encoding='utf-8-sig')
     print("\nBusbars that need to be added: ", len(new_busbar_df))
     print("\nBusbars that will be added saved to utils/busbar_tobeadded.csv")
     print("\nExisting busbars found that will not be added: ", len(busbar_pos_tobe_added_df) - len(new_busbar_df))

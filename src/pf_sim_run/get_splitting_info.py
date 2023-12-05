@@ -1,65 +1,49 @@
 import pandas as pd
 
-def extract_key_info(name):
-    """Extracts the key parts (kilometering and type) from a name string."""
-    if name.count('-') < 2 or (not '-R' in name and not '-K' in name):
-        return None  # Invalid format, skip this element
+def parse_name(name):
+    try:
+        parts = name.split('-')
+        bane_nr, kilometering, type = parts[0], float(parts[1]), parts[2][0]
+        if type not in ['R', 'K'] or len(parts) < 3:
+            return None
+        return bane_nr, kilometering, type
+    except:
+        return None
 
-    parts = name.split('-')
-    if len(parts) < 3:
-        return None  # Not enough parts, skip this element
+def find_closest_lines(busbar, existing_lines):
+    bane_nr, kilometering, type = busbar
+    filtered_lines = [line for line in existing_lines if line[0] == bane_nr and line[2] == type]
+    sorted_lines = sorted(filtered_lines, key=lambda x: x[1])
+    lower, upper = None, None
+    for i in range(len(sorted_lines) - 1):
+        if sorted_lines[i][1] < kilometering < sorted_lines[i + 1][1]:
+            lower, upper = sorted_lines[i], sorted_lines[i + 1]
+            break
+    return lower, upper
 
-    kilometering, type_ = parts[1], parts[2][0]
-    return float(kilometering), type_
+def calculate_percent(lower, upper, busbar_kilometering):
+    if upper[1] == lower[1]:  # Avoid division by zero
+        return None
+    return (busbar_kilometering - lower[1]) / (upper[1] - lower[1]) * 100
 
-def find_closest_lines(busbar_name, existing_line_names):
-    """Finds the closest existing line names to the given busbar_name."""
-    busbar_info = extract_key_info(busbar_name)
-    if not busbar_info:
-        return None, None
+def create_dataframe(busbar_tocreate_df, existing_line_names):
+    existing_lines = [parse_name(name) for name in existing_line_names]
+    existing_lines = [line for line in existing_lines if line is not None]
 
-    busbar_km, busbar_type = busbar_info
-    closest_lower = None
-    closest_upper = None
-    min_diff_lower = float('inf')
-    min_diff_upper = float('inf')
-
-    for line_name in existing_line_names:
-        line_info = extract_key_info(line_name)
-        if not line_info:
+    rows = []
+    for _, row in busbar_tocreate_df.iterrows():
+        busbar = parse_name(row['busbar_name'])
+        if not busbar:
             continue
+        lower, upper = find_closest_lines(busbar, existing_lines)
+        if lower and upper:
+            percent = calculate_percent(lower, upper, busbar[1])
+            if percent is not None:
+                rows.append([busbar[2], busbar[0], row['busbar_name'], '-'.join(map(str, lower)), percent])
 
-        line_km, line_type = line_info
-        if line_type == busbar_type:
-            # Check for closest lower line
-            if line_km <= busbar_km and busbar_km - line_km < min_diff_lower:
-                closest_lower = line_name
-                min_diff_lower = busbar_km - line_km
-            # Check for closest upper line
-            elif line_km > busbar_km and line_km - busbar_km < min_diff_upper:
-                closest_upper = line_name
-                min_diff_upper = line_km - busbar_km
-
-    return closest_lower, closest_upper
-
-def create_dataframe(busbar_df, existing_line_names):
-    """Creates a DataFrame with the specified columns based on the given busbar DataFrame and existing line names."""
-    data = []
-
-    for busbar_name in busbar_df['busbar_name']:
-        lower_line_name, upper_line_name = find_closest_lines(busbar_name, existing_line_names)
-        if lower_line_name and upper_line_name:
-            lower_km, _  = extract_key_info(lower_line_name)
-            upper_km , _ = extract_key_info(upper_line_name)
-            busbar_km, type_ = extract_key_info(busbar_name)
-            percentage = ((busbar_km - lower_km) / (upper_km - lower_km)) * 100
-            data.append([type_, busbar_name, lower_line_name, percentage])
-    
-    new_df = pd.DataFrame(data, columns=['type', 'busbar_name', 'existing_line_name', 'percentage'])
-    return new_df
+    return pd.DataFrame(rows, columns=['type', 'bane_nr', 'busbar_name', 'lower_existing_line_name', 'percent'])
 
 def get_splitting_info(busbar_tocreate_df, existing_lines, existing_line_names):
-    busbar_tocreate_df = create_dataframe(busbar_tocreate_df, existing_line_names)
-    # Save the DataFrame to a CSV file
-    busbar_tocreate_df.to_csv('utils/line_splits.csv', index=False, header=True, encoding='utf-8-sig')
-    return busbar_tocreate_df
+    line_splitting_df = create_dataframe(busbar_tocreate_df, existing_line_names)
+    line_splitting_df.to_csv('line_splits.csv', index=False, header=True, encoding='utf-8-sig')
+    return line_splitting_df
