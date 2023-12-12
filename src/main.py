@@ -6,10 +6,8 @@ def main():
     os.system('cls')
     print("-----------------------------------------------------")
 
-    # [timely_grouped_json, busbar_pos_df] = process_input()     # MOMENTARILY COMMENTED OUT FOR TESTING PURPOSES
-    busbar_pos_df = process_input()     # MOMENTARILY COMMENTED OUT FOR TESTING PURPOSES
-    # app = pf_sim_run()  # busbar_pos_df
-    app = pf_sim_run(busbar_pos_df)  # busbar_pos_df
+    process_input()     # THIS SAVES A JSON FILE WHICH HAS ALL THE TIMESERIES DATA IN utils/timeseries.json
+    app = pf_sim_run()
     
     del app
     
