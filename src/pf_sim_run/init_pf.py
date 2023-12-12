@@ -9,14 +9,14 @@ def init_pf():
     try:
         app = pf.GetApplicationExt()
         print(app)
-        projName ='S-Banen(53)'
+        projName ='S-Banen(54)'
   
         # activate project
         app.ActivateProject(projName)
         project = app.GetActiveProject()
         print(projName + ' activated')
         
-        return app
+        return app, project
     
     except pf.ExitError as error:
         print(error)

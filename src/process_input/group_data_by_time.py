@@ -14,7 +14,7 @@ def group_data_by_time(data):
     grouped_json = json.dumps(grouped_data, indent=4,ensure_ascii=False)
     
     # Save the JSON string to a file
-    with open('utils/grouped_data.json', 'w', encoding='utf-8') as json_file:
+    with open('utils/timeseries.json', 'w', encoding='utf-8') as json_file:
         json_file.write(grouped_json)
     
     return grouped_data
