@@ -1,8 +1,5 @@
 from pf_sim_run.init_pf import init_pf
 from pf_sim_run.get_project_state import get_project_state
-from pf_sim_run.skip_existing_busbars import skip_existing_busbars
-from pf_sim_run.create_busbars import create_busbars
-from pf_sim_run.get_splitting_info import get_splitting_info
 import json
 
 def parse_name(name):
@@ -61,18 +58,33 @@ def spor_value(spor):
     return '2' if 'ord' in spor else '1'
 
 def create_busbars(app, busbar_koer, busbar_retur):
-    [existing_busbar_names, existing_lines, existing_line_names] = get_project_state(app)
+    busbars_to_create = [busbar_koer, busbar_retur]
+    [existing_busbars, existing_lines, existing_line_names] = get_project_state(app)
     
-    busbar_info = []
-    for busbar_name in [busbar_koer , busbar_retur]:
-        if busbar_name in existing_busbar_names:
-            continue
+    busbars_created = []
+    busbars_to_keep = []
+    busbars_info = []
+
+    # Parse busbar names and check for existing busbars
+    for busbar_name in busbars_to_create:
         busbar_info = parse_name(busbar_name)
         if not busbar_info:
-            return
+            return  # Skip creating of both busbars if busbar_info is not valid
 
-    busbars_created = []
-    for busbar_name in [busbar_koer , busbar_retur]:
+        busbar_exists = False
+        for existing_busbar in existing_busbars:
+            if busbar_name in existing_busbar.GetNodeName():
+                print('Busbar already exists - ', busbar_name)
+                busbars_created.append(existing_busbar)
+                busbar_exists = True
+                break
+        
+        if not busbar_exists:
+            busbars_to_keep.append(busbar_name)
+            busbars_info.append(busbar_info)  # Append info only for busbars to keep
+
+    # Process the busbars to be created
+    for busbar_name, busbar_info in zip(busbars_to_keep, busbars_info):
         lower, upper = find_closest_lines(busbar_info, existing_line_names)
         if lower and upper:
             lower_kilometering = lower[1]
@@ -115,30 +127,35 @@ def create_busbars(app, busbar_koer, busbar_retur):
             else:
                 print('ERROR: Percent was none.')
         elif lower and not upper:
-            print(f"No need to create a split, busbar '{busbar_name}' is at the same location as existing line '{lower[3]}'")
+            print(f"No need to create a split for busbar '{busbar_name}', there is one at the same location as existing line '{lower[3]}'")
+            for line in existing_lines:
+                if line.loc_name == lower[3]:
+                    busbars_connected_to_exisitng_line = line.GetConnectedElements()
+                    print('Busbars connected to line - ', busbars_connected_to_exisitng_line) #  TODO:  NEED TO VERIFY THIS AND THEN APPEND THE CORRECT BUSBAR TO busbars_created
         else:
             print('ERROR: Lower or upper line could not be found.')
     
     return busbars_created
 
 def create_define_connect_load(grid, busbars_created, load_value):
-    # Create new load
-    load = grid.CreateObject('ElmLod','new_test_load', load_value)  # NEED TO VERIFY HOW TO DEIFNE THE LOAD VALUE
+    # Create new load and set value
+    load = grid.CreateObject('ElmLoddcbi','new_test_load')
+    load.SetAttribute('plini', load_value)
     for busbar_created in busbars_created:
         cubicle = busbar_created.CreateObject('StaCubic','new_test_cubicle')
-        cubicle.obj_id = load   # NEED TO VERIFY HOW DOES THE LOAD ACTUALLY CONNECT USING -    list = (obj StaCubic).GetConnections() 
-    
-    return grid
+        cubicle.obj_id = load   # TODO: NEED TO VERIFY HOW DOES THE LOAD ACTUALLY CONNECT USING -    list = (obj StaCubic).GetConnections() 
+
+    return load
 
 def pf_sim_run():
     app, project = init_pf()
     
+    user=app.GetCurrentUser()
+    version = project.CreateVersion('auto_version')
+    
     # Get the grid
     netdat = app.GetProjectFolder('netdat')
     grid = netdat.GetContents('*.ElmNet')[0]
-
-    existing_busbars = app.GetCalcRelevantObjects("*.ElmTerm")
-    existing_busbar_names = [busbar.GetNodeName() for busbar in existing_busbars]
 
     with open('utils/timeseries.json', 'r') as file:
         data = json.load(file)
@@ -146,13 +163,20 @@ def pf_sim_run():
     busbars_to_create = []
     counter = 0
     simulation_run_count = 0 
-    interval_in_seconds = 123456789 # Set to run only once for now, define 10 for 10 second interval for a 10 second step
+    interval_in_seconds = 10 # Define 10 for 10 second interval for a 10 second step, 120 for a 2min interval
     for timestamp in data:
-        counter += 1
         if counter % interval_in_seconds == 0:
             simulation_run_count += 1
             print(f"\nSimulation run: {simulation_run_count}")
             print(f"Processing timestamp: {timestamp}")
+            
+            # Create a new project
+            new_project = version.CreateDerivedProject('auto_project', user)
+            project_activation_success = new_project.Activate()
+            if project_activation_success != 0:
+                raise Exception('Failed to activate new project')
+            print('New project created and activated')
+            
             for item in data[timestamp]:
                 busbar_koer =  f"{item['BTR']}-{format_km(item['km'])}-K-{spor_value(item['spor'])}"
                 busbar_retur = f"{item['BTR']}-{format_km(item['km'])}-R-{spor_value(item['spor'])}"
@@ -162,16 +186,17 @@ def pf_sim_run():
                     'koerledning_pos': busbar_koer,
                 })
                 
-                busbars_created = create_busbars(app, busbar_koer, busbar_retur, existing_busbar_names)
+                busbars_created = create_busbars(app, busbar_koer, busbar_retur)
+                
+                if len(busbars_created) == 0:
+                    continue
                 
                 grid = create_define_connect_load(grid, busbars_created, item["watt [kW]"])
+                counter += 1
     
-            # run_simulation(app)
+            # run_simulation(app) ComLdf.Execute()  ComLdf.IsAC()   ComLdf.IsDC()   
             # read_project_state
             # extract_data_from_project_state
             # write_data_to_file
-            # create new version of project
-            # activate_new_project(app, new_project_name)
 
-            
     return app
