@@ -6,7 +6,7 @@ def main():
     os.system('cls')
     print("-----------------------------------------------------")
 
-    process_input()     # THIS SAVES A JSON FILE WHICH HAS ALL THE TIMESERIES DATA IN utils/timeseries.json
+    # process_input()     # THIS SAVES A JSON FILE WHICH HAS ALL THE TIMESERIES DATA IN utils/timeseries.json
     app = pf_sim_run()
     
     del app

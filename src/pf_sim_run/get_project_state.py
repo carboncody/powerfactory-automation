@@ -25,4 +25,4 @@ def get_project_state(app):
     #     writer = csv.writer(file)
     #     writer.writerows([[item] for item in existing_line_names])
 
-    return [existing_busbar_names, existing_lines, existing_line_names]
+    return [existing_busbars, existing_lines, existing_line_names]
