@@ -1,6 +1,6 @@
 import os
 from process_input.process_input import process_input
-from pf_sim_run.pf_sim_run import pf_sim_run
+from pf_sim_run.tests.specific_time import pf_sim_run
 
 def main():
     os.system('cls')

@@ -125,10 +125,10 @@ def create_busbars(app, busbar_koer, busbar_retur):
                 # Split the line
                 print('Line to split - ', lower_line_name, ' with percentage - ', percent, ' %')
                 print('Busbar to be created - ', busbar_name)
-                print('Splitting line ------------------------')
+                print('Splitting line ------')
 
                 old_connected_busbars = existing_line.GetConnectedElements()
-                print('Older lines connected busbars - ', {b.GetNodeName() for b in old_connected_busbars})
+                print('Busbars connected to older line - ', {b.GetNodeName() for b in old_connected_busbars})
 
                 # Split line
                 busbar_created = app.SplitLine(existing_line, percent)
@@ -156,8 +156,6 @@ def create_busbars(app, busbar_koer, busbar_retur):
                                 new_name = busbar_name + "-new_busbar"
                                 new_connected_busbar.SetAttribute('loc_name', new_name)
                                 print(f'Renamed busbar - "Terminal" to {new_name}')
-                            else:
-                                print(new_connected_busbar.loc_name)
 
                         busbars_created.append(busbar_created)
     
@@ -168,8 +166,6 @@ def create_define_connect_load(grid, busbars_created, load_value):
     load.SetAttribute('plini', load_value)
     for busbar_created in busbars_created:
         new_cubicle_name = busbar_created.loc_name.split("-new_busbar")[0] + "_cub"
-        print('Busbar name while attaching it to the new cubicle !!!!!!!!- ', new_cubicle_name)
-
         cubicle = busbar_created.CreateObject('StaCubic', new_cubicle_name)
         cubicle.obj_id = load
 
@@ -188,14 +184,14 @@ def clearResultsAndRunSim(app):
     
     [existing_busbars, existing_lines, existing_line_names] = get_project_state(app)
     
-    current_busbars = []
+    busbars_current = []
     
     for busbar in existing_busbars :
         name = busbar.loc_name
-        current = busbar.U
-        current_busbars.append([name, current])
+        voltage = getattr(busbar, 'm:U')
+        busbars_current.append([name, voltage])
     
-    return current_busbars
+    return busbars_current
 
 def pf_sim_run():
     app, project = init_pf()
@@ -205,15 +201,13 @@ def pf_sim_run():
 
     with open('utils/timeseries.json', 'r') as file:
         data = json.load(file)
-    
-    counter = 0
-    simulation_run_count = 0 
-    interval_in_seconds = 10 # * Define 10 for 10 second interval for a 10 second step, 120 for a 2min interval
-    for timestamp in data:
-        if counter % interval_in_seconds == 0:
-            simulation_run_count += 1
-            print(f"\nSimulation run: {simulation_run_count}")
-            print(f"Processing timestamp: {timestamp}")
+
+    specific_timestamps = ["12:49:53"] # "12:49:54"]
+    sim_run_count = 0
+    for timestamp in specific_timestamps:
+        if timestamp in data:
+            sim_run_count += 1
+            print(f"\n\n\n------------- Processing timestamp: {timestamp} / Simultation run: {sim_run_count} ------------- ")
             
             # Create a new project
             new_project = version.CreateDerivedProject('auto_project', user)
@@ -226,7 +220,11 @@ def pf_sim_run():
             netdat = app.GetProjectFolder('netdat')
             grid = netdat.GetContents('*.ElmNet')[0]
             
+            train_count = 0
+            # Each item / train in the timestamp
             for item in data[timestamp]:
+                train_count += 1
+                print('\nProcessing train - ', train_count, ' / ', len(data[timestamp]), ' --- in simulation run ', sim_run_count)
                 busbar_koer =  f"{item['BTR']}-{format_km(item['km'])}-K-{spor_value(item['spor'])}"
                 busbar_retur = f"{item['BTR']}-{format_km(item['km'])}-R-{spor_value(item['spor'])}"
                 
@@ -239,18 +237,15 @@ def pf_sim_run():
                 busbars_created = create_busbars(app, busbar_koer, busbar_retur)
                 
                 if len(busbars_created) == 0:
+                    print("WARNING - No busbars created")
                     continue
                 
-                load = create_define_connect_load(grid, busbars_created, item["watt [kW]"])
+                create_define_connect_load(grid, busbars_created, item["watt [kW]"])
                 
-                # busbar_result_matrix = clearResultsAndRunSim(app)
-                # write_to_csv(['busbar_name', 'current [kA]'], busbar_result_matrix, 'utils/busbar_result_matrix.csv')
-                
-                busbars_created = []
-             
-                counter += 1            
-                # * adding these breaks to test run it only once
-                break
-            break
+                busbar_result_matrix = clearResultsAndRunSim(app)
+                print(busbar_result_matrix)
+                write_to_csv(['busbar_name', 'voltage [V]'], busbar_result_matrix, 'utils/busbar_result_matrix.csv')
+        else :
+            print(f"ERROR - Skipping timestamp: {timestamp} as it is not found in the data")
 
     return app

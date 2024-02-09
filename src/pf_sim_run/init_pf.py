@@ -9,7 +9,7 @@ def init_pf():
     try:
         app = pf.GetApplicationExt()
         print(app)
-        projName ='S-Banen(54)'
+        projName ='S-Banen(55)'
   
         # activate project
         app.ActivateProject(projName)
