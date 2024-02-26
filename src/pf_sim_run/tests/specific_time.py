@@ -3,11 +3,13 @@ from pf_sim_run.get_project_state import get_project_state
 import json
 import csv
 
-def write_to_csv(header, data, path):
-    with open(path, 'w', encoding='UTF8', newline='') as f:
+def write_to_csv(data, header, path):
+    with open(path, 'w', encoding='UTF8', newline='\n') as f:
         writer = csv.writer(f)
         writer.writerow(header)
-        writer.writerow(data)
+
+        for row in data:
+            writer.writerow(row)
 
 def parse_name(name):
     try:
@@ -184,14 +186,23 @@ def clearResultsAndRunSim(app):
     
     [existing_busbars, existing_lines, existing_line_names] = get_project_state(app)
     
-    busbars_current = []
+    busbar_name_kilometering_current_table = []
     
     for busbar in existing_busbars :
         name = busbar.loc_name
-        voltage = getattr(busbar, 'm:U')
-        busbars_current.append([name, voltage])
+        busbar_info = parse_name(name)
+        if busbar_info == None:
+            continue
+        busbar_kilometering = busbar_info[1]
+        busbar_type = busbar_info[2]
+        try:
+            current = getattr(busbar, 'm:U')
+            print(name, '-->', current)
+        except:
+            print('ERROR: Could not get current for busbar - ', name)
+        busbar_name_kilometering_current_table.append([name, busbar_type, busbar_kilometering, current])
     
-    return busbars_current
+    return busbar_name_kilometering_current_table
 
 def pf_sim_run():
     app, project = init_pf()
@@ -202,7 +213,7 @@ def pf_sim_run():
     with open('utils/timeseries.json', 'r') as file:
         data = json.load(file)
 
-    specific_timestamps = ["12:49:53"] # "12:49:54"]
+    specific_timestamps = ["11:37:43"] #  12:49:53 "12:49:54"]
     sim_run_count = 0
     for timestamp in specific_timestamps:
         if timestamp in data:
@@ -242,9 +253,8 @@ def pf_sim_run():
                 
                 create_define_connect_load(grid, busbars_created, item["watt [kW]"])
                 
-                busbar_result_matrix = clearResultsAndRunSim(app)
-                print(busbar_result_matrix)
-                write_to_csv(['busbar_name', 'voltage [V]'], busbar_result_matrix, 'utils/busbar_result_matrix.csv')
+            busbar_name_kilometering_current_table = clearResultsAndRunSim(app)
+            write_to_csv(busbar_name_kilometering_current_table, ['busbar_name', 'type [R or K]', 'busbar_kilometering [km]', 'current [kA]'], 'utils/busbar_name_current_table.csv')
         else :
             print(f"ERROR - Skipping timestamp: {timestamp} as it is not found in the data")
 
