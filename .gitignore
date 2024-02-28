@@ -1,5 +1,5 @@
 # Ignore the utils folder
-utils/
+#utils/
 
 # Ignore Python compiled files and __pycache__ directories
 src/__pycache__
