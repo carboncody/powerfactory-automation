@@ -3,11 +3,13 @@ from pf_sim_run.get_project_state import get_project_state
 import json
 import csv
 
-def write_to_csv(header, data, path):
-    with open(path, 'w', encoding='UTF8', newline='') as f:
+def write_to_csv(data, header, path):
+    with open(path, 'w', encoding='UTF8', newline='\n') as f:
         writer = csv.writer(f)
         writer.writerow(header)
-        writer.writerow(data)
+
+        for row in data:
+            writer.writerow(row)
 
 def parse_name(name):
     try:
@@ -125,10 +127,10 @@ def create_busbars(app, busbar_koer, busbar_retur):
                 # Split the line
                 print('Line to split - ', lower_line_name, ' with percentage - ', percent, ' %')
                 print('Busbar to be created - ', busbar_name)
-                print('Splitting line ------------------------')
+                print('Splitting line ------')
 
                 old_connected_busbars = existing_line.GetConnectedElements()
-                print('Older lines connected busbars - ', {b.GetNodeName() for b in old_connected_busbars})
+                print('Busbars connected to older line - ', {b.GetNodeName() for b in old_connected_busbars})
 
                 # Split line
                 busbar_created = app.SplitLine(existing_line, percent)
@@ -156,8 +158,6 @@ def create_busbars(app, busbar_koer, busbar_retur):
                                 new_name = busbar_name + "-new_busbar"
                                 new_connected_busbar.SetAttribute('loc_name', new_name)
                                 print(f'Renamed busbar - "Terminal" to {new_name}')
-                            else:
-                                print(new_connected_busbar.loc_name)
 
                         busbars_created.append(busbar_created)
     
@@ -165,17 +165,15 @@ def create_busbars(app, busbar_koer, busbar_retur):
 
 def create_define_connect_load(grid, busbars_created, load_value):
     load = grid.CreateObject('ElmLoddcbi','new_test_load')
-    load.SetAttribute('plini', load_value)
+    load.SetAttribute('plini', load_value*1000)
     for busbar_created in busbars_created:
         new_cubicle_name = busbar_created.loc_name.split("-new_busbar")[0] + "_cub"
-        print('Busbar name while attaching it to the new cubicle !!!!!!!!- ', new_cubicle_name)
-
         cubicle = busbar_created.CreateObject('StaCubic', new_cubicle_name)
         cubicle.obj_id = load
 
     return load
 
-def clearResultsAndRunSim(app):
+def clear_results_and_run_sim(app,busbar_name_kilometering_current_table, timestamp):
     print('Running simulation............')
     # Get the results
     myElmRes = app.GetFromStudyCase('myElmRes.ElmRes')                                     
@@ -187,15 +185,22 @@ def clearResultsAndRunSim(app):
     ComLdf.Execute()
     
     [existing_busbars, existing_lines, existing_line_names] = get_project_state(app)
-    
-    current_busbars = []
-    
+        
     for busbar in existing_busbars :
         name = busbar.loc_name
-        current = busbar.U
-        current_busbars.append([name, current])
+        busbar_info = parse_name(name)
+        if busbar_info == None:
+            continue
+        busbar_kilometering = busbar_info[1]
+        busbar_type = busbar_info[2]
+        try:
+            current = getattr(busbar, 'm:U')
+            # print(name, '-->', current)
+            busbar_name_kilometering_current_table.append([name, busbar_type, busbar_kilometering, current, timestamp])
+        except:
+            print('ERROR: Could not get current for busbar - ', name)
     
-    return current_busbars
+    return busbar_name_kilometering_current_table
 
 def pf_sim_run():
     app, project = init_pf()
