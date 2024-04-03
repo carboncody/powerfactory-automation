@@ -1,5 +1,6 @@
 from pf_sim_run.init_pf import init_pf
 from pf_sim_run.get_project_state import get_project_state
+from pf_sim_run.logs.log_failures import log_failures
 import json
 import csv
 
@@ -21,12 +22,13 @@ def parse_name(name):
     except:
         return None
 
-def find_closest_lines(busbar, existing_line_names):
+def find_closest_lines(busbar, existing_line_names, timestamp, project_name):
     bane_nr, kilometering, type, busbar_name, direction = busbar
     existing_lines_info = [parse_name(name) for name in existing_line_names]
     existing_lines_info = [line for line in existing_lines_info if line is not None and line[0] == bane_nr and line[2] == type and line[4] == direction]
     
     if not existing_lines_info:
+        log_failures('ERROR', busbar_name, 'No closest lines found for busbar', timestamp, project_name)
         print('No lines found for busbar')
         return None, None
 
@@ -66,7 +68,7 @@ def format_km(km):
 def spor_value(spor):
     return '2' if 'ord' in spor else '1'
 
-def create_busbars(app, busbar_koer, busbar_retur):
+def create_busbars(app, project_name, busbar_koer, busbar_retur, timestamp):
     busbars_to_create = [busbar_koer, busbar_retur]
     print('Busbars to create: ', busbars_to_create)
     [existing_busbars, existing_lines, existing_line_names] = get_project_state(app)
@@ -79,6 +81,7 @@ def create_busbars(app, busbar_koer, busbar_retur):
     for busbar_name in busbars_to_create:
         busbar_info = parse_name(busbar_name)
         if not busbar_info:
+            log_failures('ERROR',busbar_name, 'Invalid busbar name', timestamp, project_name)
             print('ERROR: Invalid busbar name - ', busbar_name)
             return
 
@@ -96,9 +99,10 @@ def create_busbars(app, busbar_koer, busbar_retur):
 
     # Process the busbars to be created
     for busbar_name, busbar_info in zip(busbars_to_keep, busbars_info):
-        lower, upper = find_closest_lines(busbar_info, existing_line_names)
+        lower, upper = find_closest_lines(busbar_info, existing_line_names, timestamp, project_name)
         
         if not lower and not upper:
+            log_failures('ERROR', busbar_info[3], 'Both lower and upper line could not be found', timestamp, project_name)
             print('ERROR: Both lower and upper line could not be found for busbar ' + busbar_info[3])
             continue
         
@@ -117,6 +121,7 @@ def create_busbars(app, busbar_koer, busbar_retur):
 
             percent = calculate_percent(lower_kilometering, upper_kilometering, busbar_info[1])
             if percent is None:
+                log_failures('ERROR', busbar_name, 'Could not calculate percentage for busbar, the upper and lower kilometerings are the same', timestamp, project_name)
                 print('ERROR: Could not calculate percentage for busbar - ', busbar_name)
                 continue
             
@@ -148,6 +153,7 @@ def create_busbars(app, busbar_koer, busbar_retur):
                         if check_renamed_line_exists(app, new_line_name):
                             print(f'Line {new_line_name} successfully verified')
                         else:
+                            log_failures('ERROR', busbar_name, 'Line verification failed, the data to the left is a line', timestamp, project_name)
                             print(f'ERROR: Line {new_line_name} verification failed')
 
                         # Renaming busbar called Terminal
@@ -173,7 +179,7 @@ def create_define_connect_load(grid, busbars_created, load_value):
 
     return load
 
-def clear_results_and_run_sim(app,busbar_name_kilometering_current_table, timestamp):
+def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_current_table, timestamp):
     print('Running simulation............')
     # Get the results
     myElmRes = app.GetFromStudyCase('myElmRes.ElmRes')                                     
@@ -182,7 +188,13 @@ def clear_results_and_run_sim(app,busbar_name_kilometering_current_table, timest
     # Clear all results from previous runs
     myElmRes.Clear()
     # Run the simulation
-    ComLdf.Execute()
+    execution_success = ComLdf.Execute()
+    
+    if execution_success != 0:
+        log_failures('ERROR', 'Simulation failed', 'Pf reported execution failure', timestamp, project_name)
+        print('\n\n ----ERROR: PowerFactory failed to execute simulation for timestamp - ', timestamp, '----\n\n')
+        return busbar_name_kilometering_current_table, 0
+        
     
     [existing_busbars, existing_lines, existing_line_names] = get_project_state(app)
         
@@ -198,9 +210,10 @@ def clear_results_and_run_sim(app,busbar_name_kilometering_current_table, timest
             # print(name, '-->', current)
             busbar_name_kilometering_current_table.append([name, busbar_type, busbar_kilometering, current, timestamp])
         except:
+            log_failures('ERROR', name, 'Could not get current for busbar', timestamp, project_name)
             print('ERROR: Could not get current for busbar - ', name)
     
-    return busbar_name_kilometering_current_table
+    return busbar_name_kilometering_current_table, 1
 
 def pf_sim_run():
     app, project = init_pf()
@@ -224,6 +237,7 @@ def pf_sim_run():
             new_project = version.CreateDerivedProject('auto_project', user)
             project_activation_success = new_project.Activate()
             if project_activation_success != 0:
+                log_failures('ERROR', 'auto_project', 'Failed to activate new project', timestamp, new_project.loc_name)
                 raise Exception('Failed to activate new project')
             active_project = app.GetActiveProject()
             print('New project created and activated - ', active_project.loc_name)
@@ -241,7 +255,7 @@ def pf_sim_run():
                     'koerledning_pos': busbar_koer,
                 })
                 
-                busbars_created = create_busbars(app, busbar_koer, busbar_retur)
+                busbars_created = create_busbars(app, active_project.loc_name, busbar_koer, busbar_retur, timestamp)
                 
                 if len(busbars_created) == 0:
                     continue
@@ -254,7 +268,6 @@ def pf_sim_run():
                 busbars_created = []
              
                 counter += 1            
-                # * adding these breaks to test run it only once
                 break
             break
 

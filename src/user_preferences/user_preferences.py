@@ -61,6 +61,19 @@ def get_input_for_mode_specific_timestamps():
             return validated_timestamps
         else:
             print("One or more timestamps are invalid. Please ensure they are in the format HH:MM:SS.")
+            
+def get_input_for_mode_all_timestamps_with_interval():
+    print("Enter interval in seconds (integer, 1 or bigger):")
+    while True:
+        input_string = input()
+        try:
+            interval = int(input_string)
+            if interval >= 1:
+                return interval
+            else:
+                print("Interval in seconds must be 1 or bigger.")
+        except ValueError:
+            print("Invalid input. Please enter an integer.")
 
 def validate_timestamp(timestamp):
     try:

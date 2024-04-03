@@ -21,3 +21,4 @@ def init_pf():
     except pf.ExitError as error:
         print(error)
         print('error.code = %d' % error.code)
+        print('\n\n------- Could not start PowerFactory, check if it is running otherwise check error code -------')
