@@ -4,6 +4,7 @@ import os
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Construct the paths relative to the base_dir
+init_project_name='S-Banen(55)'
 utils_path = os.path.join(base_dir, "utils")
 time_series_json_path = os.path.join(utils_path, "timeseries.json")
 output_path = os.path.join(utils_path, "output")
