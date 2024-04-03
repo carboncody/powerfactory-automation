@@ -1,63 +1,41 @@
-type,busbar_name,message,timestamp,project in pftime of log
-ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,13:56:43 03-04-2024,auto_project(38)
-ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,13:56:43 03-04-2024,auto_project(38)
-ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,13:56:43 03-04-2024,auto_project(38)
-ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,13:56:52 03-04-2024,auto_project(38)
-ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,13:56:52 03-04-2024,auto_project(38)
-ERROR,82-003.336-K-2,Both lower and upper line could not be found,12:00:05,13:56:58 03-04-2024,auto_project(39)
-ERROR,82-003.336-R-2,Both lower and upper line could not be found,12:00:05,13:56:58 03-04-2024,auto_project(39)
-ERROR,81-000.998-K-2,No closest lines found for busbar,12:00:05,13:57:02 03-04-2024,auto_project(39)
-ERROR,81-000.998-K-2,Both lower and upper line could not be found,12:00:05,13:57:02 03-04-2024,auto_project(39)
-ERROR,81-000.998-R-2,Both lower and upper line could not be found,12:00:05,13:57:02 03-04-2024,auto_project(39)
-ERROR,81-000.943-K-2,No closest lines found for busbar,12:00:10,13:57:13 03-04-2024,auto_project(40)
-ERROR,81-000.943-K-2,Both lower and upper line could not be found,12:00:10,13:57:13 03-04-2024,auto_project(40)
-ERROR,81-000.943-R-2,Both lower and upper line could not be found,12:00:10,13:57:13 03-04-2024,auto_project(40)
-ERROR,82-003.401-K-2,Both lower and upper line could not be found,12:00:10,13:57:14 03-04-2024,auto_project(40)
-ERROR,82-003.401-R-2,Both lower and upper line could not be found,12:00:10,13:57:14 03-04-2024,auto_project(40)
-ERROR,81-000.888-K-2,No closest lines found for busbar,12:00:15,13:57:29 03-04-2024,auto_project(41)
-ERROR,81-000.888-K-2,Both lower and upper line could not be found,12:00:15,13:57:29 03-04-2024,auto_project(41)
-ERROR,81-000.888-R-2,Both lower and upper line could not be found,12:00:15,13:57:29 03-04-2024,auto_project(41)
-ERROR,82-003.466-K-2,Both lower and upper line could not be found,12:00:15,13:57:31 03-04-2024,auto_project(41)
-ERROR,82-003.466-R-2,Both lower and upper line could not be found,12:00:15,13:57:31 03-04-2024,auto_project(41)
-ERROR,82-003.527-K-2,Both lower and upper line could not be found,12:00:20,13:57:40 03-04-2024,auto_project(42)
-ERROR,82-003.527-R-2,Both lower and upper line could not be found,12:00:20,13:57:40 03-04-2024,auto_project(42)
-ERROR,81-000.833-K-2,No closest lines found for busbar,12:00:20,13:57:41 03-04-2024,auto_project(42)
-ERROR,81-000.833-K-2,Both lower and upper line could not be found,12:00:20,13:57:41 03-04-2024,auto_project(42)
-ERROR,81-000.833-R-2,Both lower and upper line could not be found,12:00:20,13:57:41 03-04-2024,auto_project(42)
-ERROR,82-003.587-K-2,Both lower and upper line could not be found,12:00:25,13:57:54 03-04-2024,auto_project(43)
-ERROR,82-003.587-R-2,Both lower and upper line could not be found,12:00:25,13:57:54 03-04-2024,auto_project(43)
-ERROR,81-000.778-K-2,No closest lines found for busbar,12:00:25,13:57:56 03-04-2024,auto_project(43)
-ERROR,81-000.778-K-2,Both lower and upper line could not be found,12:00:25,13:57:56 03-04-2024,auto_project(43)
-ERROR,81-000.778-R-2,Both lower and upper line could not be found,12:00:25,13:57:56 03-04-2024,auto_project(43)
-ERROR,81-000.723-K-2,No closest lines found for busbar,12:00:30,13:58:06 03-04-2024,auto_project(44)
-ERROR,81-000.723-K-2,Both lower and upper line could not be found,12:00:30,13:58:06 03-04-2024,auto_project(44)
-ERROR,81-000.723-R-2,Both lower and upper line could not be found,12:00:30,13:58:06 03-04-2024,auto_project(44)
-ERROR,82-003.646-K-2,Both lower and upper line could not be found,12:00:30,13:58:11 03-04-2024,auto_project(44)
-ERROR,82-003.646-R-2,Both lower and upper line could not be found,12:00:30,13:58:11 03-04-2024,auto_project(44)
-ERROR,Simulation failed,Pf reported execution failure,12:00:30,13:58:13 03-04-2024,auto_project(44)
-ERROR,81-000.668-K-2,No closest lines found for busbar,12:00:35,13:58:17 03-04-2024,auto_project(45)
-ERROR,81-000.668-K-2,Both lower and upper line could not be found,12:00:35,13:58:17 03-04-2024,auto_project(45)
-ERROR,81-000.668-R-2,Both lower and upper line could not be found,12:00:35,13:58:17 03-04-2024,auto_project(45)
-ERROR,82-003.701-K-2,Both lower and upper line could not be found,12:00:35,13:58:18 03-04-2024,auto_project(45)
-ERROR,82-003.701-R-2,Both lower and upper line could not be found,12:00:35,13:58:18 03-04-2024,auto_project(45)
-ERROR,Simulation failed,Pf reported execution failure,12:00:35,13:58:26 03-04-2024,auto_project(45)
-ERROR,81-000.613-K-2,No closest lines found for busbar,12:00:40,13:58:30 03-04-2024,auto_project(46)
-ERROR,81-000.613-K-2,Both lower and upper line could not be found,12:00:40,13:58:30 03-04-2024,auto_project(46)
-ERROR,81-000.613-R-2,Both lower and upper line could not be found,12:00:40,13:58:30 03-04-2024,auto_project(46)
-ERROR,82-003.756-K-2,Both lower and upper line could not be found,12:00:40,13:58:38 03-04-2024,auto_project(46)
-ERROR,82-003.756-R-2,Both lower and upper line could not be found,12:00:40,13:58:38 03-04-2024,auto_project(46)
-ERROR,81-000.558-K-2,No closest lines found for busbar,12:00:45,13:58:45 03-04-2024,auto_project(47)
-ERROR,81-000.558-K-2,Both lower and upper line could not be found,12:00:45,13:58:45 03-04-2024,auto_project(47)
-ERROR,81-000.558-R-2,Both lower and upper line could not be found,12:00:45,13:58:45 03-04-2024,auto_project(47)
-ERROR,82-003.808-K-2,Both lower and upper line could not be found,12:00:45,13:58:48 03-04-2024,auto_project(47)
-ERROR,82-003.808-R-2,Both lower and upper line could not be found,12:00:45,13:58:48 03-04-2024,auto_project(47)
-ERROR,82-003.858-K-2,Both lower and upper line could not be found,12:00:50,13:58:59 03-04-2024,auto_project(48)
-ERROR,82-003.858-R-2,Both lower and upper line could not be found,12:00:50,13:58:59 03-04-2024,auto_project(48)
-ERROR,81-000.507-K-2,No closest lines found for busbar,12:00:50,13:59:01 03-04-2024,auto_project(48)
-ERROR,81-000.507-K-2,Both lower and upper line could not be found,12:00:50,13:59:01 03-04-2024,auto_project(48)
-ERROR,81-000.507-R-2,Both lower and upper line could not be found,12:00:50,13:59:01 03-04-2024,auto_project(48)
-ERROR,81-000.468-K-2,No closest lines found for busbar,12:00:55,13:59:13 03-04-2024,auto_project(49)
-ERROR,81-000.468-K-2,Both lower and upper line could not be found,12:00:55,13:59:13 03-04-2024,auto_project(49)
-ERROR,81-000.468-R-2,Both lower and upper line could not be found,12:00:55,13:59:13 03-04-2024,auto_project(49)
-ERROR,82-003.908-K-2,Both lower and upper line could not be found,12:00:55,13:59:15 03-04-2024,auto_project(49)
-ERROR,82-003.908-R-2,Both lower and upper line could not be found,12:00:55,13:59:15 03-04-2024,auto_project(49)
+type,busbar_name,message,timestamp,project in pf,time of log
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(59),15:43:37 03-04-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(59),15:43:37 03-04-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(59),15:43:37 03-04-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(59),15:43:44 03-04-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(59),15:43:44 03-04-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(60),15:50:38 03-04-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(60),15:50:38 03-04-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(60),15:50:38 03-04-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(60),15:50:48 03-04-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(60),15:50:48 03-04-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(61),15:57:49 03-04-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(61),15:57:49 03-04-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(61),15:57:49 03-04-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(61),15:57:56 03-04-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(61),15:57:56 03-04-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(62),16:01:44 03-04-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(62),16:01:44 03-04-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(62),16:01:44 03-04-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(62),16:01:50 03-04-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(62),16:01:50 03-04-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(63),16:02:55 03-04-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(63),16:02:55 03-04-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(63),16:02:55 03-04-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(63),16:03:02 03-04-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(63),16:03:02 03-04-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(64),16:20:36 03-04-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(64),16:20:36 03-04-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(64),16:20:36 03-04-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(64),16:20:42 03-04-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(64),16:20:42 03-04-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(65),16:22:57 03-04-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(65),16:22:57 03-04-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(65),16:22:57 03-04-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(65),16:23:03 03-04-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(65),16:23:03 03-04-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(66),16:24:05 03-04-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(66),16:24:05 03-04-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(66),16:24:05 03-04-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(66),16:24:11 03-04-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(66),16:24:11 03-04-2024

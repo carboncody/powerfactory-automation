@@ -3,7 +3,7 @@ import csv
 def get_project_state(app):
     # Get existing busbars
     existing_busbars = app.GetCalcRelevantObjects("*.ElmTerm")
-    existing_busbar_names = [busbar.GetNodeName() for busbar in existing_busbars]
+    existing_spoler = app.GetCalcRelevantObjects("*.ElmSind")
     
     # Get existing lines
     existing_lines = app.GetCalcRelevantObjects("*.ElmLne")
@@ -25,4 +25,4 @@ def get_project_state(app):
     #     writer = csv.writer(file)
     #     writer.writerows([[item] for item in existing_line_names])
 
-    return [existing_busbars, existing_lines, existing_line_names]
+    return [existing_busbars, existing_lines, existing_line_names, existing_spoler]

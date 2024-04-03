@@ -71,7 +71,7 @@ def spor_value(spor):
 def create_busbars(app, project_name, busbar_koer, busbar_retur, timestamp):
     busbars_to_create = [busbar_koer, busbar_retur]
     print('Busbars to create: ', busbars_to_create)
-    [existing_busbars, existing_lines, existing_line_names] = get_project_state(app)
+    [existing_busbars, existing_lines, existing_line_names, existing_spoler] = get_project_state(app)
     
     busbars_created = []
     busbars_to_keep = []
@@ -179,7 +179,7 @@ def create_define_connect_load(grid, busbars_created, load_value):
 
     return load
 
-def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_current_table, timestamp):
+def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_current_table, spole_current_table, timestamp):
     print('Running simulation............')
     # Get the results
     myElmRes = app.GetFromStudyCase('myElmRes.ElmRes')                                     
@@ -193,10 +193,15 @@ def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_curren
     if execution_success != 0:
         log_failures('ERROR', 'Simulation failed', 'Pf reported execution failure', timestamp, project_name)
         print('\n\n ----ERROR: PowerFactory failed to execute simulation for timestamp - ', timestamp, '----\n\n')
-        return busbar_name_kilometering_current_table, 0
+        return busbar_name_kilometering_current_table, spole_current_table, 0
         
     
-    [existing_busbars, existing_lines, existing_line_names] = get_project_state(app)
+    [existing_busbars, existing_lines, existing_line_names, existing_spoler] = get_project_state(app)
+    
+    for spole in existing_spoler:
+        spole_name = spole.loc_name
+        spole_current = getattr(spole, 'm:I')
+        spole_current_table.append([spole_name, spole_current])
         
     for busbar in existing_busbars :
         name = busbar.loc_name
@@ -213,7 +218,7 @@ def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_curren
             log_failures('ERROR', name, 'Could not get current for busbar', timestamp, project_name)
             print('ERROR: Could not get current for busbar - ', name)
     
-    return busbar_name_kilometering_current_table, 1
+    return busbar_name_kilometering_current_table, spole_current_table, 1
 
 def pf_sim_run():
     app, project = init_pf()
