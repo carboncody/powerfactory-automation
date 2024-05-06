@@ -71,7 +71,7 @@ def spor_value(spor):
 def create_busbars(app, project_name, busbar_koer, busbar_retur, timestamp):
     busbars_to_create = [busbar_koer, busbar_retur]
     print('Busbars to create: ', busbars_to_create)
-    [existing_busbars, existing_lines, existing_line_names, existing_spoler] = get_project_state(app)
+    [existing_busbars, existing_lines, existing_line_names, transformer_busbars] = get_project_state(app)
     
     busbars_created = []
     busbars_to_keep = []
@@ -179,7 +179,7 @@ def create_define_connect_load(grid, busbars_created, load_value):
 
     return load
 
-def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_current_table, spole_current_table, timestamp):
+def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_voltage_table, spole_current_table, timestamp):
     print('Running simulation............')
     # Get the results
     myElmRes = app.GetFromStudyCase('myElmRes.ElmRes')                                     
@@ -193,16 +193,22 @@ def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_curren
     if execution_success != 0:
         log_failures('ERROR', 'Simulation failed', 'Pf reported execution failure', timestamp, project_name)
         print('\n\n ----ERROR: PowerFactory failed to execute simulation for timestamp - ', timestamp, '----\n\n')
-        return busbar_name_kilometering_current_table, spole_current_table, 0
+        return busbar_name_kilometering_voltage_table, spole_current_table, 0
         
+    [existing_busbars, existing_lines, existing_line_names, transformer_busbars] = get_project_state(app)
     
-    [existing_busbars, existing_lines, existing_line_names, existing_spoler] = get_project_state(app)
-    
-    for spole in existing_spoler:
-        spole_name = spole.loc_name
-        spole_current = getattr(spole, 'm:I')
-        spole_current_table.append([spole_name, spole_current])
-        
+    # * Busbars are correcttly calculated as they have "Enretter" in them
+    for busbar in transformer_busbars:
+        name = busbar.loc_name
+        try: 
+            # ! Doesn't work as m:i is not an attribute, support ticket -> 
+            # * https://support.digsilent.de/scripts/texcel/CustomerWise/clogin.dll?newmainpg#P-23/Incident-64931
+            current = getattr(busbar,"m:i")
+            spole_current_table.append([name, current])
+        except:
+            log_failures('ERROR', name, 'Could not get current for transformer busbar', timestamp, project_name)
+            print('ERROR: Could not get current for transformer busbar - ', name)
+
     for busbar in existing_busbars :
         name = busbar.loc_name
         busbar_info = parse_name(name)
@@ -211,14 +217,13 @@ def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_curren
         busbar_kilometering = busbar_info[1]
         busbar_type = busbar_info[2]
         try:
-            current = getattr(busbar, 'm:U')
-            # print(name, '-->', current)
-            busbar_name_kilometering_current_table.append([name, busbar_type, busbar_kilometering, current, timestamp])
+            voltage = getattr(busbar, 'm:U')
+            busbar_name_kilometering_voltage_table.append([name, busbar_type, busbar_kilometering, voltage, timestamp])
         except:
-            log_failures('ERROR', name, 'Could not get current for busbar', timestamp, project_name)
-            print('ERROR: Could not get current for busbar - ', name)
+            log_failures('ERROR', name, 'Could not get voltage for busbar', timestamp, project_name)
+            print('ERROR: Could not get voltage for busbar - ', name)
     
-    return busbar_name_kilometering_current_table, spole_current_table, 1
+    return busbar_name_kilometering_voltage_table, spole_current_table, 1
 
 def pf_sim_run():
     app, project = init_pf()
@@ -266,9 +271,6 @@ def pf_sim_run():
                     continue
                 
                 load = create_define_connect_load(grid, busbars_created, item["watt [kW]"])
-                
-                # busbar_result_matrix = clearResultsAndRunSim(app)
-                # write_to_csv(['busbar_name', 'current [kA]'], busbar_result_matrix, 'utils/busbar_result_matrix.csv')
                 
                 busbars_created = []
              

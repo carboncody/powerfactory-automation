@@ -32,6 +32,5 @@ def log_failures(type, busbar_name, message, timestamp, project_ref_in_pf='--'):
         with open(logs_path, 'a', newline='') as file:
             writer = csv.writer(file)
             writer.writerow(new_record)
-        print(f"New log entry added: {new_record}")
     else:
         print("This record already exists in the log.")
