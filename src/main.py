@@ -26,9 +26,10 @@ def main():
         app = sim_specific_timestamps(timestamps)
     
     if simulation_mode == 2:
-        start_time, interval, total_timestamps = get_input_for_mode_specific_start_time()
-        print(f"Start Time: {start_time}, Interval (in seconds) between each simulation: {interval}, Total number of timestamps: {total_timestamps}")
-        app = sim_specific_start_time(start_time, interval, total_timestamps)
+        # start_time, interval, total_timestamps = get_input_for_mode_specific_start_time()
+        # print(f"Start Time: {start_time}, Interval (in seconds) between each simulation: {interval}, Total number of timestamps: {total_timestamps}")
+        # app = sim_specific_start_time(start_time, interval, total_timestamps)
+        app = sim_specific_start_time()
         
     if simulation_mode == 3:
         interval = get_input_for_mode_all_timestamps_with_interval()

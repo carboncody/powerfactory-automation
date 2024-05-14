@@ -195,16 +195,49 @@ def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_voltag
         print('\n\n ----ERROR: PowerFactory failed to execute simulation for timestamp - ', timestamp, '----\n\n')
         return busbar_name_kilometering_voltage_table, spole_current_table, 0
         
-    [existing_busbars, existing_lines, existing_line_names, transformer_busbars] = get_project_state(app)
+    # [existing_busbars, existing_lines, existing_line_names, transformer_busbars, transformers] = get_project_state(app)
+    [existing_busbars, existing_lines, existing_line_names, transformers] = get_project_state(app)
     
     # * Busbars are correcttly calculated as they have "Enretter" in them
-    for busbar in transformer_busbars:
-        name = busbar.loc_name
+    for transformer in transformers:
+        name = transformer.loc_name
         try: 
-            # ! Doesn't work as m:i is not an attribute, support ticket -> 
+            # ! Doesn't work, support ticket suggested to get the current on the connected line's busbars -> 
             # * https://support.digsilent.de/scripts/texcel/CustomerWise/clogin.dll?newmainpg#P-23/Incident-64931
-            current = getattr(busbar,"m:i")
-            spole_current_table.append([name, current])
+            connected_elements = transformer.GetConnectedElements()
+            if (len(connected_elements) != 2):
+                log_failures('ERROR', name, 'Transformer busbar has more or less than 2 connected elements', timestamp, project_name)
+                print('ERROR: Transformer busbar has more or less than 2 connected elements - ', name)
+                continue
+            
+            connected_elems_busbar_1 = connected_elements[0].GetConnectedElements()
+            connected_elems_busbar_2 = connected_elements[1].GetConnectedElements()
+            
+            # TODO : Check if there is only one line associated with transformer
+            for connected_elem in connected_elems_busbar_1:
+                if ('ElmLne') in connected_elem.GetFullName():
+                    line = connected_elem
+            for connected_elem in connected_elems_busbar_2:
+                if ('ElmLne') in connected_elem.GetFullName():
+                    line = connected_elem
+            
+            if (line == None):
+                log_failures('ERROR', name, 'Line busbar not found', timestamp, project_name)
+                print('ERROR: Line busbar not found for transformer - ', name)
+                continue
+            
+            # * This works! Can get current from line associated with transformer
+            try:
+                line_current = getattr(line, 'm:i1:bus1')
+                print('\n\n Line current - ', line_current)
+            except:
+                print('ERROR: Could not get current for Line using method m_i1_bus1')
+            try:
+                line_current = getattr(line, 'm:i1:bus2')
+                print('\n\n Line current - ', line_current)
+            except:
+                print('ERROR: Could not get current for Line using method m_i1_bus1')
+            
         except:
             log_failures('ERROR', name, 'Could not get current for transformer busbar', timestamp, project_name)
             print('ERROR: Could not get current for transformer busbar - ', name)

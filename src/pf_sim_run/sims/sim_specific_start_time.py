@@ -25,10 +25,12 @@ def calculate_specific_timestamps(start_time_str, interval_seconds, total_timest
     return timestamps
 
 
-def sim_specific_start_time(start_time, interval_in_seconds, total_timestamps):
+# def sim_specific_start_time(start_time, interval_in_seconds, total_timestamps):
+def sim_specific_start_time():
     with open(globals.time_series_json_path, 'r') as file:
         data = json.load(file)
 
-    specific_timestamps = calculate_specific_timestamps(start_time, interval_in_seconds, total_timestamps, data)
+    # specific_timestamps = calculate_specific_timestamps(start_time, interval_in_seconds, total_timestamps, data)
     
-    return run_sim(specific_timestamps, data)
+    temporary_test_specific_timestamps = ['12:00:00', '12:00:05', '12:00:10', '12:00:15']
+    return run_sim(temporary_test_specific_timestamps, data)

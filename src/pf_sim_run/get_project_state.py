@@ -25,4 +25,6 @@ def get_project_state(app):
     for fullname in existing_lines:
         existing_line_names.append(fullname.loc_name)
 
-    return [existing_busbars, existing_lines, existing_line_names, transformer_busbars]
+    transformers = app.GetCalcRelevantObjects("*.ElmTr2")
+    # return [existing_busbars, existing_lines, existing_line_names, transformer_busbars, transformers]
+    return [existing_busbars, existing_lines, existing_line_names, transformers]
