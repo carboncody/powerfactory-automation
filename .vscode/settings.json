@@ -1,4 +1,6 @@
 // Inside .vscode/settings.json
 {
-    "python.defaultInterpreterPath": "c:/Users/JarlPallesen/miniconda3/envs/ris-sogm/python.exe"
+    "python.defaultInterpreterPath": "c:/Users/JarlPallesen/miniconda3/envs/ris-sogm/python.exe",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true
 }
