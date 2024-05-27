@@ -17,10 +17,8 @@ def main():
     create_output_directory()
     # process_input()     # * THIS SAVES A JSON FILE WHICH HAS ALL THE TIMESERIES DATA IN utils/timeseries.json
     
-    # simulation_mode = choose_simulation_mode()
-    # print(f"You have chosen mode: {simulation_mode}")
-    
-    simulation_mode = 2
+    simulation_mode = choose_simulation_mode()
+    print(f"You have chosen mode: {simulation_mode}")
     
     if simulation_mode == 1:
         timestamps = get_input_for_mode_specific_timestamps()
@@ -28,10 +26,10 @@ def main():
         app = sim_specific_timestamps(timestamps)
     
     if simulation_mode == 2:
-        # start_time, interval, total_timestamps = get_input_for_mode_specific_start_time()
-        # print(f"Start Time: {start_time}, Interval (in seconds) between each simulation: {interval}, Total number of timestamps: {total_timestamps}")
-        # app = sim_specific_start_time(start_time, interval, total_timestamps)
-        app = sim_specific_start_time()
+        start_time, interval, total_timestamps = get_input_for_mode_specific_start_time()
+        print(f"Start Time: {start_time}, Interval (in seconds) between each simulation: {interval}, Total number of timestamps: {total_timestamps}")
+        app = sim_specific_start_time(start_time, interval, total_timestamps)
+        # app = sim_specific_start_time()
         
     if simulation_mode == 3:
         interval = get_input_for_mode_all_timestamps_with_interval()

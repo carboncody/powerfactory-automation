@@ -3,13 +3,13 @@ from pf_sim_run.init_pf import init_pf
 from pf_sim_run.pf_sim_run import *
 
 def run_sim(timestamps, data):
-    app, project = init_pf()
+    app, project = init_pf() # type: ignore
     
     user=app.GetCurrentUser()
     version = project.CreateVersion('auto_version')
     sim_run_count = 0
     busbar_name_kilometering_current_table = []
-    spole_current_table = []
+    rectifier_current_table = []
     simulation_success = 0
     
     for timestamp in timestamps:
@@ -44,13 +44,13 @@ def run_sim(timestamps, data):
                 
                 busbars_created = create_busbars(app, active_project.loc_name, busbar_koer, busbar_retur, timestamp)
                 
-                if len(busbars_created) == 0:
+                if len(busbars_created) == 0: # type: ignore
                     print("WARNING - No busbars created")
                     continue
                 
                 create_define_connect_load(grid, busbars_created, item["watt [kW]"])
                 
-            [busbar_name_kilometering_current_table, spole_current_table, simulation_success] = clear_results_and_run_sim(app, active_project.loc_name, busbar_name_kilometering_current_table, spole_current_table, timestamp)
+            [busbar_name_kilometering_current_table, rectifier_current_table, simulation_success] = clear_results_and_run_sim(app, active_project.loc_name, busbar_name_kilometering_current_table, rectifier_current_table, timestamp)
             
             if simulation_success == 0:
                 continue
@@ -60,6 +60,7 @@ def run_sim(timestamps, data):
     # Process output
     ordered_busbar_name_kilometering_current_table = sorted(busbar_name_kilometering_current_table, key=lambda x: x[2])
     write_to_csv(ordered_busbar_name_kilometering_current_table, ['busbar_name', 'type [R or K]', 'busbar_kilometering [km]', 'voltage [V]', 'timestamp [HH:MM:SS]'], globals.main_sim_output_path)
-    write_to_csv(spole_current_table, ['spole_name', 'current [kA]', 'timestamp [HH:MM:SS]'], globals.spole_table_output_path)
+    ordered_rectifier_current_table = sorted(rectifier_current_table, key=lambda x: x[0])
+    write_to_csv(ordered_rectifier_current_table, ['rectifier_name', 'current [A]', 'timestamp [HH:MM:SS]'], globals.rectifier_table_output_path)
     
     return app

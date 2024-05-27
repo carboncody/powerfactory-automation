@@ -1,7 +1,9 @@
 import csv
 import os
 import globals
+import pandas as pd
 from process_output.plot_busbar_voltages import plot_busbar_voltages
+from process_output.plot_recitifer_currents import plot_recitifer_currents
 
 def separate_by_type(csv_path):
     type_r_data = []
@@ -44,8 +46,12 @@ def separate_by_number_and_type(result_output_path, output_path):
     return data_by_number_and_type
 
 def process_output():
-    data_by_number_and_type = separate_by_number_and_type(globals.main_sim_output_path, globals.sorted_csvs_path)
+    # data_by_number_and_type = separate_by_number_and_type(globals.main_sim_output_path, globals.sorted_csvs_path)
 
-    for key, array in data_by_number_and_type.items():
-        print(f"Creating graphs for {key}...")
-        plot_busbar_voltages(array, key, globals.graphs_path)
+    # for key, array in data_by_number_and_type.items():
+    #     print(f"Creating graphs for {key}...")
+    #     plot_busbar_voltages(array, key, globals.graphs_path)
+    
+    # read recitifer_current_data from globals.rectifier_table_output_path
+    rectifier_current_data = pd.read_csv(globals.rectifier_table_output_path)
+    plot_recitifer_currents(rectifier_current_data, globals.rectifier_graphs_path)

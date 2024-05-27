@@ -179,7 +179,7 @@ def create_define_connect_load(grid, busbars_created, load_value):
 
     return load
 
-def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_voltage_table, spole_current_table, timestamp):
+def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_voltage_table, rectifier_current_table, timestamp):
     print('Running simulation............')
     # Get the results
     myElmRes = app.GetFromStudyCase('myElmRes.ElmRes')                                     
@@ -193,16 +193,16 @@ def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_voltag
     if execution_success != 0:
         log_failures('ERROR', 'Simulation failed', 'Pf reported execution failure', timestamp, project_name)
         print('\n\n ----ERROR: PowerFactory failed to execute simulation for timestamp - ', timestamp, '----\n\n')
-        return busbar_name_kilometering_voltage_table, spole_current_table, 0
+        return busbar_name_kilometering_voltage_table, rectifier_current_table, 0
         
     # [existing_busbars, existing_lines, existing_line_names, transformer_busbars, transformers] = get_project_state(app)
     [existing_busbars, existing_lines, existing_line_names, transformers] = get_project_state(app)
     
     # * Busbars are correcttly calculated as they have "Enretter" in them
     for busbar in existing_busbars:
-        name = busbar.loc_name
+        rectifier_busbar_name = busbar.loc_name
         
-        if('O-Ensretter-K-BB' not in name):
+        if(not rectifier_busbar_name.endswith('O-Ensretter-K-BB')):
             continue
         
         busbar_current = 0
@@ -215,23 +215,22 @@ def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_voltag
                     lines_connected_to_ensretter.append(connected_elem)
             
             if(len(lines_connected_to_ensretter) == 0):
-                print('No lines connected to busbar - ', name)
+                print('No lines connected to busbar - ', rectifier_busbar_name)
                 continue
             
             for line in lines_connected_to_ensretter:
                 try:
                     line_current = getattr(line, 'm:I1:bus1')
-                    print('\n\n Line current --', line.loc_name ,' - ', line_current)
                 except:
                     print('Could not get current for line - ', line.loc_name)
                     
-                busbar_current = line_current + busbar_current
+                busbar_current = abs(line_current) + busbar_current
             
-            print('\n\n Busbar current - ', busbar_current)    
+            rectifier_current_table.append([rectifier_busbar_name, busbar_current, timestamp])
             
         except:
-            log_failures('ERROR', name, 'Could not get current for transformer busbar', timestamp, project_name)
-            print('ERROR: Could not get current for transformer busbar - ', name)
+            log_failures('ERROR', rectifier_busbar_name, 'Could not get current for rectifier', timestamp, rectifier_busbar_name)
+            print('ERROR: Could not get current for rectifier - ', rectifier_busbar_name)
 
     for busbar in existing_busbars :
         name = busbar.loc_name
@@ -247,7 +246,7 @@ def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_voltag
             log_failures('ERROR', name, 'Could not get voltage for busbar', timestamp, project_name)
             print('ERROR: Could not get voltage for busbar - ', name)
     
-    return busbar_name_kilometering_voltage_table, spole_current_table, 1
+    return busbar_name_kilometering_voltage_table, rectifier_current_table, 1
 
 def pf_sim_run():
     app, project = init_pf() # type: ignore
