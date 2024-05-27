@@ -222,3 +222,174 @@ ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_
 ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(7),14:23:38 14-05-2024
 ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(7),14:23:44 14-05-2024
 ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(7),14:23:44 14-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project,10:53:52 27-05-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project,10:53:52 27-05-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project,10:53:52 27-05-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project,10:54:00 27-05-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project,10:54:00 27-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(1),11:17:56 27-05-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(1),11:17:56 27-05-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(1),11:17:56 27-05-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(1),11:18:06 27-05-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(1),11:18:06 27-05-2024
+ERROR,82-030.955-O-Ensretter-K-BB,Could not get current for transformer busbar,12:00:00,auto_project(1),11:19:06 27-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(2),11:27:53 27-05-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(2),11:27:53 27-05-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(2),11:27:53 27-05-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(2),11:28:01 27-05-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(2),11:28:01 27-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(3),11:29:27 27-05-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(3),11:29:27 27-05-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(3),11:29:27 27-05-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(3),11:29:35 27-05-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(3),11:29:35 27-05-2024
+ERROR,82-003.336-K-2,Both lower and upper line could not be found,12:00:05,auto_project(4),11:29:41 27-05-2024
+ERROR,82-003.336-R-2,Both lower and upper line could not be found,12:00:05,auto_project(4),11:29:41 27-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project,11:35:25 27-05-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project,11:35:25 27-05-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project,11:35:25 27-05-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project,11:35:36 27-05-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project,11:35:36 27-05-2024
+ERROR,82-026.525-O-Ensretter-K-BB,Could not get current for transformer busbar,12:00:00,auto_project,11:35:38 27-05-2024
+ERROR,82-003.336-K-2,Both lower and upper line could not be found,12:00:05,auto_project(1),11:35:42 27-05-2024
+ERROR,82-003.336-R-2,Both lower and upper line could not be found,12:00:05,auto_project(1),11:35:42 27-05-2024
+ERROR,81-000.998-K-2,No closest lines found for busbar,12:00:05,auto_project(1),11:35:45 27-05-2024
+ERROR,81-000.998-K-2,Both lower and upper line could not be found,12:00:05,auto_project(1),11:35:45 27-05-2024
+ERROR,81-000.998-R-2,Both lower and upper line could not be found,12:00:05,auto_project(1),11:35:45 27-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(2),11:37:58 27-05-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(2),11:37:58 27-05-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(2),11:37:58 27-05-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(2),11:38:05 27-05-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(2),11:38:05 27-05-2024
+ERROR,82-026.525-O-Ensretter-K-BB,Could not get current for transformer busbar,12:00:00,auto_project(2),11:38:07 27-05-2024
+ERROR,82-003.336-K-2,Both lower and upper line could not be found,12:00:05,auto_project(3),11:38:12 27-05-2024
+ERROR,82-003.336-R-2,Both lower and upper line could not be found,12:00:05,auto_project(3),11:38:12 27-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(4),11:40:39 27-05-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(4),11:40:39 27-05-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(4),11:40:39 27-05-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(4),11:40:46 27-05-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(4),11:40:46 27-05-2024
+ERROR,82-026.525-O-Ensretter-K-BB,Could not get current for transformer busbar,12:00:00,auto_project(4),11:40:48 27-05-2024
+ERROR,82-003.336-K-2,Both lower and upper line could not be found,12:00:05,auto_project(5),11:40:52 27-05-2024
+ERROR,82-003.336-R-2,Both lower and upper line could not be found,12:00:05,auto_project(5),11:40:52 27-05-2024
+ERROR,81-000.998-K-2,No closest lines found for busbar,12:00:05,auto_project(5),11:40:55 27-05-2024
+ERROR,81-000.998-K-2,Both lower and upper line could not be found,12:00:05,auto_project(5),11:40:55 27-05-2024
+ERROR,81-000.998-R-2,Both lower and upper line could not be found,12:00:05,auto_project(5),11:40:55 27-05-2024
+ERROR,82-026.525-O-Ensretter-K-BB,Could not get current for transformer busbar,12:00:05,auto_project(5),11:41:01 27-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(7),11:42:25 27-05-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(7),11:42:25 27-05-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(7),11:42:25 27-05-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(7),11:42:32 27-05-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(7),11:42:32 27-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(8),11:44:59 27-05-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(8),11:44:59 27-05-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(8),11:44:59 27-05-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(8),11:45:07 27-05-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(8),11:45:07 27-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(9),11:46:19 27-05-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(9),11:46:19 27-05-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(9),11:46:19 27-05-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(9),11:46:26 27-05-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(9),11:46:26 27-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(10),11:47:03 27-05-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(10),11:47:03 27-05-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(10),11:47:03 27-05-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(10),11:47:10 27-05-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(10),11:47:10 27-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(11),11:48:10 27-05-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(11),11:48:10 27-05-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(11),11:48:10 27-05-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(11),11:48:18 27-05-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(11),11:48:18 27-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project,12:00:02 27-05-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project,12:00:02 27-05-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project,12:00:02 27-05-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project,12:00:09 27-05-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project,12:00:09 27-05-2024
+ERROR,82-003.336-K-2,Both lower and upper line could not be found,12:00:05,auto_project(1),12:00:16 27-05-2024
+ERROR,82-003.336-R-2,Both lower and upper line could not be found,12:00:05,auto_project(1),12:00:16 27-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(50),15:16:09 27-05-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(50),15:16:09 27-05-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(50),15:16:09 27-05-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(50),15:16:18 27-05-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(50),15:16:18 27-05-2024
+ERROR,82-003.336-K-2,Both lower and upper line could not be found,12:00:05,auto_project(51),15:16:28 27-05-2024
+ERROR,82-003.336-R-2,Both lower and upper line could not be found,12:00:05,auto_project(51),15:16:29 27-05-2024
+ERROR,81-000.998-K-2,No closest lines found for busbar,12:00:05,auto_project(51),15:16:36 27-05-2024
+ERROR,81-000.998-K-2,Both lower and upper line could not be found,12:00:05,auto_project(51),15:16:36 27-05-2024
+ERROR,81-000.998-R-2,Both lower and upper line could not be found,12:00:05,auto_project(51),15:16:36 27-05-2024
+ERROR,81-000.943-K-2,No closest lines found for busbar,12:00:10,auto_project(52),15:16:52 27-05-2024
+ERROR,81-000.943-K-2,Both lower and upper line could not be found,12:00:10,auto_project(52),15:16:52 27-05-2024
+ERROR,81-000.943-R-2,Both lower and upper line could not be found,12:00:10,auto_project(52),15:16:52 27-05-2024
+ERROR,82-003.401-K-2,Both lower and upper line could not be found,12:00:10,auto_project(52),15:16:54 27-05-2024
+ERROR,82-003.401-R-2,Both lower and upper line could not be found,12:00:10,auto_project(52),15:16:54 27-05-2024
+ERROR,81-000.888-K-2,No closest lines found for busbar,12:00:15,auto_project(53),15:17:11 27-05-2024
+ERROR,81-000.888-K-2,Both lower and upper line could not be found,12:00:15,auto_project(53),15:17:11 27-05-2024
+ERROR,81-000.888-R-2,Both lower and upper line could not be found,12:00:15,auto_project(53),15:17:11 27-05-2024
+ERROR,82-003.466-K-2,Both lower and upper line could not be found,12:00:15,auto_project(53),15:17:14 27-05-2024
+ERROR,82-003.466-R-2,Both lower and upper line could not be found,12:00:15,auto_project(53),15:17:14 27-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(54),15:20:47 27-05-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(54),15:20:47 27-05-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(54),15:20:47 27-05-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(54),15:20:56 27-05-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(54),15:20:56 27-05-2024
+ERROR,82-003.336-K-2,Both lower and upper line could not be found,12:00:05,auto_project(55),15:21:03 27-05-2024
+ERROR,82-003.336-R-2,Both lower and upper line could not be found,12:00:05,auto_project(55),15:21:03 27-05-2024
+ERROR,81-000.998-K-2,No closest lines found for busbar,12:00:05,auto_project(55),15:21:10 27-05-2024
+ERROR,81-000.998-K-2,Both lower and upper line could not be found,12:00:05,auto_project(55),15:21:10 27-05-2024
+ERROR,81-000.998-R-2,Both lower and upper line could not be found,12:00:05,auto_project(55),15:21:10 27-05-2024
+ERROR,81-000.943-K-2,No closest lines found for busbar,12:00:10,auto_project(56),15:21:23 27-05-2024
+ERROR,81-000.943-K-2,Both lower and upper line could not be found,12:00:10,auto_project(56),15:21:23 27-05-2024
+ERROR,81-000.943-R-2,Both lower and upper line could not be found,12:00:10,auto_project(56),15:21:23 27-05-2024
+ERROR,82-003.401-K-2,Both lower and upper line could not be found,12:00:10,auto_project(56),15:21:24 27-05-2024
+ERROR,82-003.401-R-2,Both lower and upper line could not be found,12:00:10,auto_project(56),15:21:24 27-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(57),15:30:52 27-05-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(57),15:30:52 27-05-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(57),15:30:52 27-05-2024
+ERROR,82-003.267-K-2,Both lower and upper line could not be found,12:00:00,auto_project(57),15:31:00 27-05-2024
+ERROR,82-003.267-R-2,Both lower and upper line could not be found,12:00:00,auto_project(57),15:31:00 27-05-2024
+ERROR,81-001.042-K-2,No closest lines found for busbar,12:00:01,auto_project(58),15:31:11 27-05-2024
+ERROR,81-001.042-K-2,Both lower and upper line could not be found,12:00:01,auto_project(58),15:31:11 27-05-2024
+ERROR,81-001.042-R-2,Both lower and upper line could not be found,12:00:01,auto_project(58),15:31:11 27-05-2024
+ERROR,82-003.281-K-2,Both lower and upper line could not be found,12:00:01,auto_project(58),15:31:15 27-05-2024
+ERROR,82-003.281-R-2,Both lower and upper line could not be found,12:00:01,auto_project(58),15:31:15 27-05-2024
+ERROR,81-001.031-K-2,No closest lines found for busbar,12:00:02,auto_project(59),15:31:21 27-05-2024
+ERROR,81-001.031-K-2,Both lower and upper line could not be found,12:00:02,auto_project(59),15:31:22 27-05-2024
+ERROR,81-001.031-R-2,Both lower and upper line could not be found,12:00:02,auto_project(59),15:31:22 27-05-2024
+ERROR,82-003.295-K-2,Both lower and upper line could not be found,12:00:02,auto_project(59),15:31:23 27-05-2024
+ERROR,82-003.295-R-2,Both lower and upper line could not be found,12:00:02,auto_project(59),15:31:23 27-05-2024
+ERROR,82-003.309-K-2,Both lower and upper line could not be found,12:00:03,auto_project(60),15:31:40 27-05-2024
+ERROR,82-003.309-R-2,Both lower and upper line could not be found,12:00:03,auto_project(60),15:31:40 27-05-2024
+ERROR,81-001.020-K-2,No closest lines found for busbar,12:00:03,auto_project(60),15:31:42 27-05-2024
+ERROR,81-001.020-K-2,Both lower and upper line could not be found,12:00:03,auto_project(60),15:31:42 27-05-2024
+ERROR,81-001.020-R-2,Both lower and upper line could not be found,12:00:03,auto_project(60),15:31:42 27-05-2024
+ERROR,82-003.323-K-2,Both lower and upper line could not be found,12:00:04,auto_project(61),15:31:51 27-05-2024
+ERROR,82-003.323-R-2,Both lower and upper line could not be found,12:00:04,auto_project(61),15:31:51 27-05-2024
+ERROR,81-001.009-K-2,No closest lines found for busbar,12:00:04,auto_project(61),15:31:58 27-05-2024
+ERROR,81-001.009-K-2,Both lower and upper line could not be found,12:00:04,auto_project(61),15:31:58 27-05-2024
+ERROR,81-001.009-R-2,Both lower and upper line could not be found,12:00:04,auto_project(61),15:31:58 27-05-2024
+ERROR,82-003.336-K-2,Both lower and upper line could not be found,12:00:05,auto_project(62),15:32:09 27-05-2024
+ERROR,82-003.336-R-2,Both lower and upper line could not be found,12:00:05,auto_project(62),15:32:09 27-05-2024
+ERROR,81-000.998-K-2,No closest lines found for busbar,12:00:05,auto_project(62),15:32:13 27-05-2024
+ERROR,81-000.998-K-2,Both lower and upper line could not be found,12:00:05,auto_project(62),15:32:13 27-05-2024
+ERROR,81-000.998-R-2,Both lower and upper line could not be found,12:00:05,auto_project(62),15:32:13 27-05-2024
+ERROR,81-000.987-K-2,No closest lines found for busbar,12:00:06,auto_project(63),15:32:24 27-05-2024
+ERROR,81-000.987-K-2,Both lower and upper line could not be found,12:00:06,auto_project(63),15:32:24 27-05-2024
+ERROR,81-000.987-R-2,Both lower and upper line could not be found,12:00:06,auto_project(63),15:32:24 27-05-2024
+ERROR,82-003.349-K-2,Both lower and upper line could not be found,12:00:06,auto_project(63),15:32:32 27-05-2024
+ERROR,82-003.349-R-2,Both lower and upper line could not be found,12:00:06,auto_project(63),15:32:32 27-05-2024
+ERROR,81-000.976-K-2,No closest lines found for busbar,12:00:07,auto_project(64),15:32:41 27-05-2024
+ERROR,81-000.976-K-2,Both lower and upper line could not be found,12:00:07,auto_project(64),15:32:41 27-05-2024
+ERROR,81-000.976-R-2,Both lower and upper line could not be found,12:00:07,auto_project(64),15:32:41 27-05-2024
+ERROR,82-003.362-K-2,Both lower and upper line could not be found,12:00:07,auto_project(64),15:32:43 27-05-2024
+ERROR,82-003.362-R-2,Both lower and upper line could not be found,12:00:07,auto_project(64),15:32:43 27-05-2024
+ERROR,82-003.375-K-2,Both lower and upper line could not be found,12:00:08,auto_project(65),15:32:56 27-05-2024
+ERROR,82-003.375-R-2,Both lower and upper line could not be found,12:00:08,auto_project(65),15:32:56 27-05-2024
+ERROR,81-000.965-K-2,No closest lines found for busbar,12:00:08,auto_project(65),15:33:01 27-05-2024
+ERROR,81-000.965-K-2,Both lower and upper line could not be found,12:00:08,auto_project(65),15:33:01 27-05-2024
+ERROR,81-000.965-R-2,Both lower and upper line could not be found,12:00:08,auto_project(65),15:33:01 27-05-2024
+ERROR,82-003.388-K-2,Both lower and upper line could not be found,12:00:09,auto_project(66),15:33:16 27-05-2024
+ERROR,82-003.388-R-2,Both lower and upper line could not be found,12:00:09,auto_project(66),15:33:16 27-05-2024
+ERROR,81-000.954-K-2,No closest lines found for busbar,12:00:09,auto_project(66),15:33:19 27-05-2024
+ERROR,81-000.954-K-2,Both lower and upper line could not be found,12:00:09,auto_project(66),15:33:19 27-05-2024
+ERROR,81-000.954-R-2,Both lower and upper line could not be found,12:00:09,auto_project(66),15:33:19 27-05-2024
