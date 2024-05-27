@@ -10,6 +10,7 @@ def plot_recitifer_currents(data, output_path):
 
     # Generating and saving the graphs
     for rectifier in data['rectifier_name'].unique():
+        print(f"Creating current vs. time graph for recitifier {rectifier}...")
         rectifier_data = data[data['rectifier_name'] == rectifier]
         plt.figure()
         plt.plot(rectifier_data['timestamp [HH:MM:SS]'], rectifier_data['current [A]'], marker='o')
@@ -28,13 +29,16 @@ def plot_recitifer_currents(data, output_path):
         rectifier_data = data[data['rectifier_name'] == rectifier]
         plt.plot(rectifier_data['timestamp [HH:MM:SS]'], rectifier_data['current [A]'], marker='.', label=rectifier)
 
+    print("Creating current vs. time graph for all rectifiers...")
     plt.title('Current vs Time for All Rectifiers')
     plt.xlabel('Timestamp [HH:MM:SS]')
     plt.xticks(rotation=45)
     plt.ylabel('Current [A]')
-    plt.legend(loc='best')
     plt.grid(True)
     plt.tight_layout()
+
+    # Adjust the legend placement
+    plt.legend(loc='upper left', bbox_to_anchor=(1, 1), ncol=1)
     file_path = os.path.join(output_path, 'all_rectifiers.png')
-    plt.savefig(file_path)
+    plt.savefig(file_path, bbox_inches='tight')
     plt.close()

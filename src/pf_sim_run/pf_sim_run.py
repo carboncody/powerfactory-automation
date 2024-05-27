@@ -3,8 +3,11 @@ from pf_sim_run.get_project_state import get_project_state
 from pf_sim_run.logs.log_failures import log_failures
 import json
 import csv
+import os
 
 def write_to_csv(data, header, path):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    
     with open(path, 'w', encoding='UTF8', newline='\n') as f:
         writer = csv.writer(f)
         writer.writerow(header)
