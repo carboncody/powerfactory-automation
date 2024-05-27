@@ -199,44 +199,35 @@ def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_voltag
     [existing_busbars, existing_lines, existing_line_names, transformers] = get_project_state(app)
     
     # * Busbars are correcttly calculated as they have "Enretter" in them
-    for transformer in transformers:
-        name = transformer.loc_name
+    for busbar in existing_busbars:
+        name = busbar.loc_name
+        
+        if('O-Ensretter-K-BB' not in name):
+            continue
+        
+        busbar_current = 0
+        lines_connected_to_ensretter = []
+        
         try: 
-            # ! Doesn't work, support ticket suggested to get the current on the connected line's busbars -> 
-            # * https://support.digsilent.de/scripts/texcel/CustomerWise/clogin.dll?newmainpg#P-23/Incident-64931
-            connected_elements = transformer.GetConnectedElements()
-            if (len(connected_elements) != 2):
-                log_failures('ERROR', name, 'Transformer busbar has more or less than 2 connected elements', timestamp, project_name)
-                print('ERROR: Transformer busbar has more or less than 2 connected elements - ', name)
+            connected_elements = busbar.GetConnectedElements()
+            for connected_elem in connected_elements: 
+                if ('ElmLne' in connected_elem.GetFullName()):
+                    lines_connected_to_ensretter.append(connected_elem)
+            
+            if(len(lines_connected_to_ensretter) == 0):
+                print('No lines connected to busbar - ', name)
                 continue
             
-            connected_elems_busbar_1 = connected_elements[0].GetConnectedElements()
-            connected_elems_busbar_2 = connected_elements[1].GetConnectedElements()
+            for line in lines_connected_to_ensretter:
+                try:
+                    line_current = getattr(line, 'm:I1:bus1')
+                    print('\n\n Line current --', line.loc_name ,' - ', line_current)
+                except:
+                    print('Could not get current for line - ', line.loc_name)
+                    
+                busbar_current = line_current + busbar_current
             
-            # TODO : Check if there is only one line associated with transformer
-            for connected_elem in connected_elems_busbar_1:
-                if ('ElmLne') in connected_elem.GetFullName():
-                    line = connected_elem
-            for connected_elem in connected_elems_busbar_2:
-                if ('ElmLne') in connected_elem.GetFullName():
-                    line = connected_elem
-            
-            if (line == None):
-                log_failures('ERROR', name, 'Line busbar not found', timestamp, project_name)
-                print('ERROR: Line busbar not found for transformer - ', name)
-                continue
-            
-            # * This works! Can get current from line associated with transformer
-            try:
-                line_current = getattr(line, 'm:i1:bus1')
-                print('\n\n Line current - ', line_current)
-            except:
-                print('ERROR: Could not get current for Line using method m_i1_bus1')
-            try:
-                line_current = getattr(line, 'm:i1:bus2')
-                print('\n\n Line current - ', line_current)
-            except:
-                print('ERROR: Could not get current for Line using method m_i1_bus1')
+            print('\n\n Busbar current - ', busbar_current)    
             
         except:
             log_failures('ERROR', name, 'Could not get current for transformer busbar', timestamp, project_name)
@@ -259,7 +250,7 @@ def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_voltag
     return busbar_name_kilometering_voltage_table, spole_current_table, 1
 
 def pf_sim_run():
-    app, project = init_pf()
+    app, project = init_pf() # type: ignore
     
     user=app.GetCurrentUser()
     version = project.CreateVersion('auto_version')
@@ -300,7 +291,7 @@ def pf_sim_run():
                 
                 busbars_created = create_busbars(app, active_project.loc_name, busbar_koer, busbar_retur, timestamp)
                 
-                if len(busbars_created) == 0:
+                if len(busbars_created) == 0: # type: ignore
                     continue
                 
                 load = create_define_connect_load(grid, busbars_created, item["watt [kW]"])

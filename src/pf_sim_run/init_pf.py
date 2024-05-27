@@ -3,7 +3,7 @@ import globals
 
 # Import pf from system path
 sys.path.append(globals.pf_path)
-import powerfactory as pf
+import powerfactory as pf # type: ignore
 
 def init_pf():
     try:

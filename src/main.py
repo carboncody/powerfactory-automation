@@ -17,8 +17,10 @@ def main():
     create_output_directory()
     # process_input()     # * THIS SAVES A JSON FILE WHICH HAS ALL THE TIMESERIES DATA IN utils/timeseries.json
     
-    simulation_mode = choose_simulation_mode()
-    print(f"You have chosen mode: {simulation_mode}")
+    # simulation_mode = choose_simulation_mode()
+    # print(f"You have chosen mode: {simulation_mode}")
+    
+    simulation_mode = 2
     
     if simulation_mode == 1:
         timestamps = get_input_for_mode_specific_timestamps()
