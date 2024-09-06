@@ -15,7 +15,7 @@ rectifier_graphs_path = r'c:\Users\tempk\Documents\GitHub\ris-sogm\src\input\out
 sorted_csvs_path = r'c:\Users\tempk\Documents\GitHub\ris-sogm\src\input\output\csv'
 input_csv_path = r'c:\Users\tempk\Documents\GitHub\ris-sogm\src\input\example.csv'
 pf_path = r'C:\Program Files\DIgSILENT\PowerFactory 2023\Python\3.9'
-simulation_run_count = 1
+simulation_run_count = 2
 
 # Functions that should be preserved during saving
 def update_globals(new_globals):

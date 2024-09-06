@@ -18,6 +18,4 @@ def sim_all():
     with open(globals.time_series_json_path, 'r') as file:
         data = json.load(file)
 
-    specific_timestamps = list_all_timestamps(data)
-    
-    return run_sim(specific_timestamps, data)
+    return list_all_timestamps(data)
