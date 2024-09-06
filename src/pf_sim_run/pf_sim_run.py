@@ -204,30 +204,35 @@ def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_voltag
     # * Busbars are correcttly calculated as they have "Enretter" in them
     for busbar in existing_busbars:
         rectifier_busbar_name = busbar.loc_name
-        
+
         if(not rectifier_busbar_name.endswith('O-Ensretter-K-BB')):
             continue
-        
+
         busbar_current = 0
         lines_connected_to_ensretter = []
         
         try: 
             connected_elements = busbar.GetConnectedElements()
+            print(connected_elements)
             for connected_elem in connected_elements: 
-                if ('ElmLne' in connected_elem.GetFullName()):
+                if ('ElmSind' in connected_elem.GetFullName()):
                     lines_connected_to_ensretter.append(connected_elem)
-            
+
             if(len(lines_connected_to_ensretter) == 0):
-                print('No lines connected to busbar - ', rectifier_busbar_name)
+                print('No lines (Reactors) connected to busbar - ', rectifier_busbar_name)
                 continue
             
             for line in lines_connected_to_ensretter:
                 try:
                     line_current = getattr(line, 'm:I1:bus1')
+
                 except:
+                    line_current = 0
                     print('Could not get current for line - ', line.loc_name)
-                    
+
                 busbar_current = abs(line_current) + busbar_current
+
+
             
             rectifier_current_table.append([rectifier_busbar_name, busbar_current, timestamp])
             
