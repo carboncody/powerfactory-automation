@@ -219,11 +219,7 @@ def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_voltag
                     lines_connected_to_ensretter.append(connected_elem)
 
             if(len(lines_connected_to_ensretter) == 0):
-<<<<<<< Updated upstream
                 print('No lines (Reactors) connected to busbar - ', rectifier_busbar_name)
-=======
-                print('No lines (reactors) connected to busbar - ', rectifier_busbar_name)
->>>>>>> Stashed changes
                 continue
             
             for line in lines_connected_to_ensretter:
