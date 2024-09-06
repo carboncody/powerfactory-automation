@@ -1,5 +1,3 @@
-import csv
-
 def get_project_state(app):
     # Get existing busbars
     transformer_busbars = []

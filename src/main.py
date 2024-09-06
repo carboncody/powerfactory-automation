@@ -5,26 +5,37 @@ from ui.mode_selection_ui import ModeSelectionUI
 from ui.mode_input_ui import ModeInputUI
 from ui.log_window_ui import LogWindow, RedirectText
 from pf_sim_run.sims.sim_specific_start_time import sim_specific_start_time
-from pf_sim_run.sims.sim_specific_timestamps import sim_specific_timestamps
 from pf_sim_run.sims.sim_all_with_interval import sim_all_with_interval
 from pf_sim_run.sims.sim_all import sim_all
 from process_output.process_output import process_output
+from pf_sim_run.sims.run_sim import run_sim
+import json
+import globals as globals
+
+def run_simulation(timestamps):
+    with open(globals.time_series_json_path, 'r') as file:
+        data = json.load(file)
+        
+    return run_sim(timestamps, data)
 
 def simulation_callback(mode, params):
+    timestamps = []
+    
     # Implement the simulation logic based on mode and params
     if mode == 1:
         print(f"Running Mode 1 with timestamps: {params['timestamps']}")
-        app = sim_specific_timestamps(params['timestamps'])
+        timestamps = params['timestamps']
     elif mode == 2:
         print(f"Running Mode 2 with Start Time: {params['start_time']}, Interval: {params['interval']}, Total Timestamps: {params['total_timestamps']}")
-        app = sim_specific_start_time(params['start_time'], params['interval'], params['total_timestamps'])
+        timestamps = sim_specific_start_time(params['start_time'], params['interval'], params['total_timestamps'])
     elif mode == 3:
         print(f"Running Mode 3 with Interval: {params['interval']}")
-        app = sim_all_with_interval(params['interval'])
+        timestamps = sim_all_with_interval(params['interval'])
     elif mode == 4:
         print(f"Running Mode 4: Simulating all timestamps")
-        app = sim_all()
+        timestamps = sim_all()
     
+    app = run_simulation(timestamps)
     process_output()
     
     del app
@@ -35,7 +46,7 @@ def simulation_callback(mode, params):
 class MainApp(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Simulation GUI with Log Window")
+        self.title("RIS Loadflow Simulerings App")
         self.geometry("800x600")
 
         # Create a log window instance and pack it into the main window

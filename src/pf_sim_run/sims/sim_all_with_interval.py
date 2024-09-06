@@ -1,8 +1,6 @@
 import json
 import globals as globals
-from pf_sim_run.init_pf import init_pf
 from pf_sim_run.pf_sim_run import *
-from pf_sim_run.sims.run_sim import run_sim
 from datetime import datetime, timedelta
 
 def calculate_specific_timestamps(interval_seconds, data):
@@ -32,6 +30,4 @@ def sim_all_with_interval(interval_in_seconds):
     with open(globals.time_series_json_path, 'r') as file:
         data = json.load(file)
 
-    specific_timestamps = calculate_specific_timestamps(interval_in_seconds, data)
-    
-    return run_sim(specific_timestamps, data)
+    return calculate_specific_timestamps(interval_in_seconds, data)
