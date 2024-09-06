@@ -393,3 +393,6 @@ ERROR,82-003.388-R-2,Both lower and upper line could not be found,12:00:09,auto_
 ERROR,81-000.954-K-2,No closest lines found for busbar,12:00:09,auto_project(66),15:33:19 27-05-2024
 ERROR,81-000.954-K-2,Both lower and upper line could not be found,12:00:09,auto_project(66),15:33:19 27-05-2024
 ERROR,81-000.954-R-2,Both lower and upper line could not be found,12:00:09,auto_project(66),15:33:19 27-05-2024
+ERROR,81-001.053-K-2,No closest lines found for busbar,12:00:00,auto_project(72),11:58:25 06-09-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(72),11:58:25 06-09-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(72),11:58:25 06-09-2024
