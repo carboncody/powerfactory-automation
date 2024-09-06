@@ -254,54 +254,59 @@ def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_voltag
 def pf_sim_run():
     app, project = init_pf() # type: ignore
     
-    user=app.GetCurrentUser()
-    version = project.CreateVersion('auto_version')
+    if app is None or project is None:
+        print("Failed to initialize PowerFactory. Please check the PowerFactory path and project.")
+        # You can either raise an exception, return early, or handle it in another way.
+        raise Exception("PowerFactory initialization failed.")
+    else:
+        user=app.GetCurrentUser()
+        version = project.CreateVersion('auto_version')
 
-    with open('utils/timeseries.json', 'r') as file:
-        data = json.load(file)
-    
-    counter = 0
-    simulation_run_count = 0 
-    interval_in_seconds = 10 # * Define 10 for 10 second interval for a 10 second step, 120 for a 2min interval
-    for timestamp in data:
-        if counter % interval_in_seconds == 0:
-            simulation_run_count += 1
-            print(f"\nSimulation run: {simulation_run_count}")
-            print(f"Processing timestamp: {timestamp}")
-            
-            # Create a new project
-            new_project = version.CreateDerivedProject('auto_project', user)
-            project_activation_success = new_project.Activate()
-            if project_activation_success != 0:
-                log_failures('ERROR', 'auto_project', 'Failed to activate new project', timestamp, new_project.loc_name)
-                raise Exception('Failed to activate new project')
-            active_project = app.GetActiveProject()
-            print('New project created and activated - ', active_project.loc_name)
-            
-            netdat = app.GetProjectFolder('netdat')
-            grid = netdat.GetContents('*.ElmNet')[0]
-            
-            for item in data[timestamp]:
-                busbar_koer =  f"{item['BTR']}-{format_km(item['km'])}-K-{spor_value(item['spor'])}"
-                busbar_retur = f"{item['BTR']}-{format_km(item['km'])}-R-{spor_value(item['spor'])}"
+        with open('utils/timeseries.json', 'r') as file:
+            data = json.load(file)
+        
+        counter = 0
+        simulation_run_count = 0 
+        interval_in_seconds = 10 # * Define 10 for 10 second interval for a 10 second step, 120 for a 2min interval
+        for timestamp in data:
+            if counter % interval_in_seconds == 0:
+                simulation_run_count += 1
+                print(f"\nSimulation run: {simulation_run_count}")
+                print(f"Processing timestamp: {timestamp}")
                 
-                busbars_to_create = []
-                busbars_to_create.append({
-                    'busbar_name': busbar_koer,
-                    'koerledning_pos': busbar_koer,
-                })
+                # Create a new project
+                new_project = version.CreateDerivedProject('auto_project', user)
+                project_activation_success = new_project.Activate()
+                if project_activation_success != 0:
+                    log_failures('ERROR', 'auto_project', 'Failed to activate new project', timestamp, new_project.loc_name)
+                    raise Exception('Failed to activate new project')
+                active_project = app.GetActiveProject()
+                print('New project created and activated - ', active_project.loc_name)
                 
-                busbars_created = create_busbars(app, active_project.loc_name, busbar_koer, busbar_retur, timestamp)
+                netdat = app.GetProjectFolder('netdat')
+                grid = netdat.GetContents('*.ElmNet')[0]
                 
-                if len(busbars_created) == 0: # type: ignore
-                    continue
+                for item in data[timestamp]:
+                    busbar_koer =  f"{item['BTR']}-{format_km(item['km'])}-K-{spor_value(item['spor'])}"
+                    busbar_retur = f"{item['BTR']}-{format_km(item['km'])}-R-{spor_value(item['spor'])}"
+                    
+                    busbars_to_create = []
+                    busbars_to_create.append({
+                        'busbar_name': busbar_koer,
+                        'koerledning_pos': busbar_koer,
+                    })
+                    
+                    busbars_created = create_busbars(app, active_project.loc_name, busbar_koer, busbar_retur, timestamp)
+                    
+                    if len(busbars_created) == 0: # type: ignore
+                        continue
+                    
+                    load = create_define_connect_load(grid, busbars_created, item["watt [kW]"])
+                    
+                    busbars_created = []
                 
-                load = create_define_connect_load(grid, busbars_created, item["watt [kW]"])
-                
-                busbars_created = []
-             
-                counter += 1            
+                    counter += 1            
+                    break
                 break
-            break
 
     return app

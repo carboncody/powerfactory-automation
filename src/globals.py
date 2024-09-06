@@ -14,7 +14,7 @@ graphs_path = r'c:\Users\tempk\Documents\GitHub\ris-sogm\src\input\output\graphs
 rectifier_graphs_path = r'c:\Users\tempk\Documents\GitHub\ris-sogm\src\input\output\graphs\rectifier'
 sorted_csvs_path = r'c:\Users\tempk\Documents\GitHub\ris-sogm\src\input\output\csv'
 input_csv_path = r'c:\Users\tempk\Documents\GitHub\ris-sogm\src\input\example.csv'
-pf_path = r'C:\Program Files\DIgSILENT\PowerFactory 2023\Python\3.9'
+pf_path = r'C:\Program Files\DIgSILENT\underservedddddddddddd'
 simulation_run_count = 2
 
 # Functions that should be preserved during saving
