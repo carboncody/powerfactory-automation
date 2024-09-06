@@ -4,7 +4,7 @@ import os
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Construct the paths relative to the base_dir
-init_project_name='S-Banen(55)'
+init_project_name='S-Banen - Base - KS til 1 & 2 på C'
 utils_path = os.path.join(base_dir, "utils")
 time_series_json_path = os.path.join(utils_path, "timeseries.json")
 output_path = os.path.join(utils_path, "output")
@@ -14,4 +14,4 @@ graphs_path = os.path.join(output_path, "graphs")
 rectifier_graphs_path = os.path.join(output_path, "graphs\\rectifier")
 sorted_csvs_path = os.path.join(output_path, "csv")
 input_csv_path = os.path.join(utils_path, 'example.csv')
-pf_path = r"C:\Program Files\DIgSILENT\PowerFactory 2023\Python\3.9"
+pf_path = r"C:\Program Files\DIgSILENT\PowerFactory 2022 SP4\Python\3.9"

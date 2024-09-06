@@ -214,11 +214,11 @@ def clear_results_and_run_sim(app, project_name, busbar_name_kilometering_voltag
         try: 
             connected_elements = busbar.GetConnectedElements()
             for connected_elem in connected_elements: 
-                if ('ElmLne' in connected_elem.GetFullName()):
+                if ('ElmSind' in connected_elem.GetFullName()):
                     lines_connected_to_ensretter.append(connected_elem)
-            
+
             if(len(lines_connected_to_ensretter) == 0):
-                print('No lines connected to busbar - ', rectifier_busbar_name)
+                print('No lines (reactor) connected to busbar - ', rectifier_busbar_name)
                 continue
             
             for line in lines_connected_to_ensretter:
