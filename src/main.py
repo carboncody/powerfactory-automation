@@ -46,7 +46,7 @@ def simulation_callback(mode, params):
 class MainApp(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Simulation GUI with Log Window")
+        self.title("RIS Loadflow Simulerings App")
         self.geometry("800x600")
 
         # Create a log window instance and pack it into the main window

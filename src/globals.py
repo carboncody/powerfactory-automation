@@ -5,17 +5,17 @@ base_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Global variables with default values
 init_project_name = 'S-Banen(55)'
-input_path = r'c:\Users\tempk\Documents\GitHub\ris-sogm\src\input'
-time_series_json_path = r'c:\Users\tempk\Documents\GitHub\ris-sogm\src\input\timeseries.json'
-output_path = r'c:\Users\tempk\Documents\GitHub\ris-sogm\src\input\output'
-main_sim_output_path = r'c:\Users\tempk\Documents\GitHub\ris-sogm\src\input\output\main_sim_output.csv'
-rectifier_table_output_path = r'c:\Users\tempk\Documents\GitHub\ris-sogm\src\input\output\rectifier_table_output.csv'
-graphs_path = r'c:\Users\tempk\Documents\GitHub\ris-sogm\src\input\output\graphs'
-rectifier_graphs_path = r'c:\Users\tempk\Documents\GitHub\ris-sogm\src\input\output\graphs\rectifier'
-sorted_csvs_path = r'c:\Users\tempk\Documents\GitHub\ris-sogm\src\input\output\csv'
-input_csv_path = r'c:\Users\tempk\Documents\GitHub\ris-sogm\src\input\example.csv'
-pf_path = r'C:\Program Files\DIgSILENT\underservedddddddddddd'
-simulation_run_count = 2
+input_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/src/input'
+time_series_json_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/src/input\timeseries.json'
+output_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/output'
+main_sim_output_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/output\main_sim_output.csv'
+rectifier_table_output_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/output\rectifier_table_output.csv'
+graphs_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/output\graphs'
+rectifier_graphs_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/output\graphs\rectifier'
+sorted_csvs_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/output\csv'
+input_csv_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/src/input\example.csv'
+pf_path = r'C:/Program Files/DIgSILENT/PowerFactory 2023/Python/3.9'
+simulation_run_count = 5
 
 # Functions that should be preserved during saving
 def update_globals(new_globals):
