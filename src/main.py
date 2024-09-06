@@ -1,48 +1,79 @@
-import os
-from process_input.process_input import process_input
-from process_output.process_output import process_output
-from user_preferences.user_preferences import *
+import sys
+import tkinter as tk
+from ui.global_variables_ui import GlobalVariablesUI
+from ui.mode_selection_ui import ModeSelectionUI
+from ui.mode_input_ui import ModeInputUI
+from ui.log_window_ui import LogWindow, RedirectText
 from pf_sim_run.sims.sim_specific_start_time import sim_specific_start_time
 from pf_sim_run.sims.sim_specific_timestamps import sim_specific_timestamps
 from pf_sim_run.sims.sim_all_with_interval import sim_all_with_interval
 from pf_sim_run.sims.sim_all import sim_all
+from process_output.process_output import process_output
 
-def create_output_directory():
-    os.makedirs(os.path.join('utils', 'output'), exist_ok=True)
-
-def main():
-    os.system('cls')
-    print("-----------------------------------------------------")
-
-    create_output_directory()
-    # process_input()     # * THIS SAVES A JSON FILE WHICH HAS ALL THE TIMESERIES DATA IN utils/timeseries.json
-    
-    simulation_mode = choose_simulation_mode()
-    print(f"You have chosen mode: {simulation_mode}")
-    
-    if simulation_mode == 1:
-        timestamps = get_input_for_mode_specific_timestamps()
-        print(f"Timestamps that will be simulated: {timestamps}")
-        app = sim_specific_timestamps(timestamps)
-    
-    if simulation_mode == 2:
-        start_time, interval, total_timestamps = get_input_for_mode_specific_start_time()
-        print(f"Start Time: {start_time}, Interval (in seconds) between each simulation: {interval}, Total number of timestamps: {total_timestamps}")
-        app = sim_specific_start_time(start_time, interval, total_timestamps)
-        # app = sim_specific_start_time()
-        
-    if simulation_mode == 3:
-        interval = get_input_for_mode_all_timestamps_with_interval()
-        print(f"Interval (in seconds) between each simulation for all timestamps: {interval}")
-        app = sim_all_with_interval(interval)
-        
-    if simulation_mode == 4:
-        print("Simulating all timestamps -")
+def simulation_callback(mode, params):
+    # Implement the simulation logic based on mode and params
+    if mode == 1:
+        print(f"Running Mode 1 with timestamps: {params['timestamps']}")
+        app = sim_specific_timestamps(params['timestamps'])
+    elif mode == 2:
+        print(f"Running Mode 2 with Start Time: {params['start_time']}, Interval: {params['interval']}, Total Timestamps: {params['total_timestamps']}")
+        app = sim_specific_start_time(params['start_time'], params['interval'], params['total_timestamps'])
+    elif mode == 3:
+        print(f"Running Mode 3 with Interval: {params['interval']}")
+        app = sim_all_with_interval(params['interval'])
+    elif mode == 4:
+        print(f"Running Mode 4: Simulating all timestamps")
         app = sim_all()
-
+    
     process_output()
     
     del app
     
+    # Add any output processing as needed
+    print("Simulation complete!")
+
+class MainApp(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        self.title("Simulation GUI with Log Window")
+        self.geometry("800x600")
+
+        # Create a log window instance and pack it into the main window
+        self.log_window = LogWindow(self)
+        self.log_window.pack(fill=tk.BOTH, expand=True)
+
+        # Redirect stdout and stderr to the log window
+        sys.stdout = RedirectText(self.log_window)
+        sys.stderr = RedirectText(self.log_window)
+
+        # Create the initial UI (showing the global variables input screen)
+        self.show_global_variables_ui()
+
+    def show_global_variables_ui(self):
+        self.clear_frame()
+        self.global_variables_ui = GlobalVariablesUI(self, self.show_mode_selection_ui)
+        self.global_variables_ui.pack(fill=tk.BOTH, expand=True)
+
+    def show_mode_selection_ui(self):
+        self.clear_frame()
+        self.mode_selection_ui = ModeSelectionUI(self, self.show_mode_specific_input_ui)
+        self.mode_selection_ui.pack(fill=tk.BOTH, expand=True)
+
+    def show_mode_specific_input_ui(self, selected_mode):
+        self.clear_frame()
+        self.mode_input_ui = ModeInputUI(self, selected_mode, simulation_callback)
+        self.mode_input_ui.pack(fill=tk.BOTH, expand=True)
+
+    def clear_frame(self):
+        for widget in self.winfo_children():
+            if isinstance(widget, LogWindow):  # Keep the log window
+                continue
+            widget.destroy()
+
 if __name__ == "__main__":
-    main()
+    app = MainApp()
+    app.mainloop()
+
+    # Reset stdout and stderr after the application is done
+    sys.stdout = sys.__stdout__
+    sys.stderr = sys.__stderr__

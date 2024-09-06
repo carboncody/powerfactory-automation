@@ -1,6 +1,6 @@
 import csv
 import os
-import globals
+import globals as globals
 import pandas as pd
 from process_output.plot_busbar_voltages import plot_busbar_voltages
 from process_output.plot_recitifer_currents import plot_recitifer_currents
