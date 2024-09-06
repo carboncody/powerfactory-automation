@@ -1,4 +1,4 @@
-import globals
+import globals as globals
 from pf_sim_run.init_pf import init_pf
 from pf_sim_run.pf_sim_run import *
 

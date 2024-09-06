@@ -1,5 +1,5 @@
 import sys
-import globals
+import globals as globals
 
 # Import pf from system path
 sys.path.append(globals.pf_path)

@@ -1,5 +1,5 @@
 import json
-import globals
+import globals as globals
 import sys
 from pf_sim_run.pf_sim_run import *
 from pf_sim_run.sims.run_sim import run_sim

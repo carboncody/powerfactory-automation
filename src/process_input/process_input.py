@@ -1,4 +1,4 @@
-import globals
+import globals as globals
 from process_input.parse_csv import parse_csv
 from process_input.calc_resolution import calc_resolution
 from process_input.group_data_by_time import group_data_by_time
