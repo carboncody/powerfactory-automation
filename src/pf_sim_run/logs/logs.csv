@@ -1,0 +1,487 @@
+type,busbar_name,message,timestamp,project in pf,time of log
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project,09:21:44 09-09-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project,09:21:44 09-09-2024
+ERROR,81-000.943-K-2,Both lower and upper line could not be found,12:00:10,auto_project(1),09:21:51 09-09-2024
+ERROR,81-000.943-R-2,Both lower and upper line could not be found,12:00:10,auto_project(1),09:21:51 09-09-2024
+ERROR,81-000.833-K-2,Both lower and upper line could not be found,12:00:20,auto_project(2),09:21:58 09-09-2024
+ERROR,81-000.833-R-2,Both lower and upper line could not be found,12:00:20,auto_project(2),09:21:58 09-09-2024
+ERROR,81-000.723-K-2,Both lower and upper line could not be found,12:00:30,auto_project(3),09:22:02 09-09-2024
+ERROR,81-000.723-R-2,Both lower and upper line could not be found,12:00:30,auto_project(3),09:22:02 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:00:30,auto_project(3),09:22:05 09-09-2024
+ERROR,81-000.613-K-2,Both lower and upper line could not be found,12:00:40,auto_project(4),09:22:07 09-09-2024
+ERROR,81-000.613-R-2,Both lower and upper line could not be found,12:00:40,auto_project(4),09:22:07 09-09-2024
+ERROR,81-000.507-K-2,Both lower and upper line could not be found,12:00:50,auto_project(5),09:22:14 09-09-2024
+ERROR,81-000.507-R-2,Both lower and upper line could not be found,12:00:50,auto_project(5),09:22:14 09-09-2024
+ERROR,81-000.442-K-2,Both lower and upper line could not be found,12:01:00,auto_project(6),09:22:24 09-09-2024
+ERROR,81-000.442-R-2,Both lower and upper line could not be found,12:01:00,auto_project(6),09:22:24 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:10,auto_project(7),09:22:29 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:10,auto_project(7),09:22:29 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:20,auto_project(8),09:22:37 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:20,auto_project(8),09:22:37 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:20,auto_project(8),09:22:43 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:30,auto_project(9),09:22:50 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:30,auto_project(9),09:22:50 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:30,auto_project(9),09:22:51 09-09-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(10),09:32:53 09-09-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(10),09:32:53 09-09-2024
+ERROR,81-000.943-K-2,Both lower and upper line could not be found,12:00:10,auto_project(11),09:33:01 09-09-2024
+ERROR,81-000.943-R-2,Both lower and upper line could not be found,12:00:10,auto_project(11),09:33:01 09-09-2024
+ERROR,81-000.833-K-2,Both lower and upper line could not be found,12:00:20,auto_project(12),09:33:09 09-09-2024
+ERROR,81-000.833-R-2,Both lower and upper line could not be found,12:00:20,auto_project(12),09:33:09 09-09-2024
+ERROR,81-000.723-K-2,Both lower and upper line could not be found,12:00:30,auto_project(13),09:33:15 09-09-2024
+ERROR,81-000.723-R-2,Both lower and upper line could not be found,12:00:30,auto_project(13),09:33:15 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:00:30,auto_project(13),09:33:18 09-09-2024
+ERROR,81-000.613-K-2,Both lower and upper line could not be found,12:00:40,auto_project(14),09:33:20 09-09-2024
+ERROR,81-000.613-R-2,Both lower and upper line could not be found,12:00:40,auto_project(14),09:33:20 09-09-2024
+ERROR,81-000.507-K-2,Both lower and upper line could not be found,12:00:50,auto_project(15),09:33:29 09-09-2024
+ERROR,81-000.507-R-2,Both lower and upper line could not be found,12:00:50,auto_project(15),09:33:29 09-09-2024
+ERROR,81-000.442-K-2,Both lower and upper line could not be found,12:01:00,auto_project(16),09:33:38 09-09-2024
+ERROR,81-000.442-R-2,Both lower and upper line could not be found,12:01:00,auto_project(16),09:33:38 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:10,auto_project(17),09:33:42 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:10,auto_project(17),09:33:42 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:20,auto_project(18),09:33:48 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:20,auto_project(18),09:33:48 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:20,auto_project(18),09:33:52 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:30,auto_project(19),09:33:57 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:30,auto_project(19),09:33:57 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:30,auto_project(19),09:33:57 09-09-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(20),09:36:42 09-09-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(20),09:36:42 09-09-2024
+ERROR,81-000.943-K-2,Both lower and upper line could not be found,12:00:10,auto_project(21),09:36:50 09-09-2024
+ERROR,81-000.943-R-2,Both lower and upper line could not be found,12:00:10,auto_project(21),09:36:50 09-09-2024
+ERROR,81-000.833-K-2,Both lower and upper line could not be found,12:00:20,auto_project(22),09:36:58 09-09-2024
+ERROR,81-000.833-R-2,Both lower and upper line could not be found,12:00:20,auto_project(22),09:36:58 09-09-2024
+ERROR,81-000.723-K-2,Both lower and upper line could not be found,12:00:30,auto_project(23),09:37:03 09-09-2024
+ERROR,81-000.723-R-2,Both lower and upper line could not be found,12:00:30,auto_project(23),09:37:03 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:00:30,auto_project(23),09:37:06 09-09-2024
+ERROR,81-000.613-K-2,Both lower and upper line could not be found,12:00:40,auto_project(24),09:37:08 09-09-2024
+ERROR,81-000.613-R-2,Both lower and upper line could not be found,12:00:40,auto_project(24),09:37:08 09-09-2024
+ERROR,81-000.507-K-2,Both lower and upper line could not be found,12:00:50,auto_project(25),09:37:17 09-09-2024
+ERROR,81-000.507-R-2,Both lower and upper line could not be found,12:00:50,auto_project(25),09:37:17 09-09-2024
+ERROR,81-000.442-K-2,Both lower and upper line could not be found,12:01:00,auto_project(26),09:37:31 09-09-2024
+ERROR,81-000.442-R-2,Both lower and upper line could not be found,12:01:00,auto_project(26),09:37:31 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:10,auto_project(27),09:37:38 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:10,auto_project(27),09:37:38 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:20,auto_project(28),09:37:45 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:20,auto_project(28),09:37:45 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:20,auto_project(28),09:37:51 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:30,auto_project(29),09:37:57 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:30,auto_project(29),09:37:57 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:30,auto_project(29),09:37:58 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:40,auto_project(30),09:38:01 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:40,auto_project(30),09:38:01 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:50,auto_project(31),09:38:10 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:50,auto_project(31),09:38:10 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:50,auto_project(31),09:38:14 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:00,auto_project(32),09:38:19 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:00,auto_project(32),09:38:19 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:02:00,auto_project(32),09:38:21 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:10,auto_project(33),09:38:24 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:10,auto_project(33),09:38:24 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:02:10,auto_project(33),09:38:29 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:20,auto_project(34),09:38:31 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:20,auto_project(34),09:38:31 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:02:20,auto_project(34),09:38:36 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:30,auto_project(35),09:38:42 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:30,auto_project(35),09:38:42 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:02:30,auto_project(35),09:38:44 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:40,auto_project(36),09:38:47 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:40,auto_project(36),09:38:47 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:50,auto_project(37),09:38:57 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:50,auto_project(37),09:38:57 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:03:00,auto_project(38),09:39:06 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:03:00,auto_project(38),09:39:06 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:03:10,auto_project(39),09:39:14 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:03:10,auto_project(39),09:39:14 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:03:10,auto_project(39),09:39:17 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:03:20,auto_project(40),09:39:24 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:03:20,auto_project(40),09:39:24 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:03:20,auto_project(40),09:39:25 09-09-2024
+ERROR,81-000.386-K-2,Both lower and upper line could not be found,12:03:30,auto_project(41),09:39:33 09-09-2024
+ERROR,81-000.386-R-2,Both lower and upper line could not be found,12:03:30,auto_project(41),09:39:33 09-09-2024
+ERROR,81-000.277-K-2,Both lower and upper line could not be found,12:03:40,auto_project(42),09:39:42 09-09-2024
+ERROR,81-000.277-R-2,Both lower and upper line could not be found,12:03:40,auto_project(42),09:39:42 09-09-2024
+ERROR,81-000.167-R-2,Both lower and upper line could not be found,12:03:50,auto_project(43),09:39:47 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:03:50,auto_project(43),09:39:51 09-09-2024
+ERROR,81-000.057-K-2,Both lower and upper line could not be found,12:04:00,auto_project(44),09:39:55 09-09-2024
+ERROR,81-000.057-R-2,Both lower and upper line could not be found,12:04:00,auto_project(44),09:39:55 09-09-2024
+ERROR,82-000.047-K-2,Both lower and upper line could not be found,12:04:10,auto_project(45),09:40:05 09-09-2024
+ERROR,82-000.047-R-2,Both lower and upper line could not be found,12:04:10,auto_project(45),09:40:05 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:04:20,auto_project(46),09:40:18 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:05:50,auto_project(55),09:41:41 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:00,auto_project(56),09:41:49 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:10,auto_project(57),09:41:59 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:20,auto_project(58),09:42:08 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:30,auto_project(59),09:42:17 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:40,auto_project(60),09:42:25 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:50,auto_project(61),09:42:34 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:07:30,auto_project(65),09:43:12 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:08:10,auto_project(69),09:43:54 09-09-2024
+ERROR,85-001.604-K-2,Both lower and upper line could not be found,12:08:30,auto_project(71),09:44:11 09-09-2024
+ERROR,85-001.604-R-2,Both lower and upper line could not be found,12:08:30,auto_project(71),09:44:11 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:08:30,auto_project(71),09:44:15 09-09-2024
+ERROR,85-001.452-K-2,Both lower and upper line could not be found,12:08:40,auto_project(72),09:44:18 09-09-2024
+ERROR,85-001.452-R-2,Both lower and upper line could not be found,12:08:40,auto_project(72),09:44:18 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:08:40,auto_project(72),09:44:25 09-09-2024
+ERROR,85-001.365-K-2,Both lower and upper line could not be found,12:08:50,auto_project(73),09:44:33 09-09-2024
+ERROR,85-001.365-R-2,Both lower and upper line could not be found,12:08:50,auto_project(73),09:44:33 09-09-2024
+ERROR,81-001.343-K-2,Both lower and upper line could not be found,12:09:00,auto_project(74),09:44:40 09-09-2024
+ERROR,81-001.343-R-2,Both lower and upper line could not be found,12:09:00,auto_project(74),09:44:40 09-09-2024
+ERROR,81-001.343-K-2,Both lower and upper line could not be found,12:09:10,auto_project(75),09:44:55 09-09-2024
+ERROR,81-001.343-R-2,Both lower and upper line could not be found,12:09:10,auto_project(75),09:44:55 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:09:10,auto_project(75),09:44:56 09-09-2024
+ERROR,81-001.343-K-2,Both lower and upper line could not be found,12:09:20,auto_project(76),09:45:01 09-09-2024
+ERROR,81-001.343-R-2,Both lower and upper line could not be found,12:09:20,auto_project(76),09:45:01 09-09-2024
+ERROR,81-001.336-K-2,Both lower and upper line could not be found,12:09:30,auto_project(77),09:45:16 09-09-2024
+ERROR,81-001.336-R-2,Both lower and upper line could not be found,12:09:30,auto_project(77),09:45:16 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:09:30,auto_project(77),09:45:17 09-09-2024
+ERROR,81-001.246-K-2,Both lower and upper line could not be found,12:09:40,auto_project(78),09:45:25 09-09-2024
+ERROR,81-001.246-R-2,Both lower and upper line could not be found,12:09:40,auto_project(78),09:45:25 09-09-2024
+ERROR,81-001.140-K-2,Both lower and upper line could not be found,12:09:50,auto_project(79),09:45:36 09-09-2024
+ERROR,81-001.140-R-2,Both lower and upper line could not be found,12:09:50,auto_project(79),09:45:36 09-09-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:10:00,auto_project(80),09:45:47 09-09-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:10:00,auto_project(80),09:45:47 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:10:00,auto_project(80),09:45:48 09-09-2024
+ERROR,81-000.943-K-2,Both lower and upper line could not be found,12:10:10,auto_project(81),09:45:55 09-09-2024
+ERROR,81-000.943-R-2,Both lower and upper line could not be found,12:10:10,auto_project(81),09:45:55 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:10:10,auto_project(81),09:45:57 09-09-2024
+ERROR,81-000.833-K-2,Both lower and upper line could not be found,12:10:20,auto_project(82),09:46:03 09-09-2024
+ERROR,81-000.833-R-2,Both lower and upper line could not be found,12:10:20,auto_project(82),09:46:03 09-09-2024
+ERROR,81-000.723-K-2,Both lower and upper line could not be found,12:10:30,auto_project(83),09:46:10 09-09-2024
+ERROR,81-000.723-R-2,Both lower and upper line could not be found,12:10:30,auto_project(83),09:46:10 09-09-2024
+ERROR,81-000.613-K-2,Both lower and upper line could not be found,12:10:40,auto_project(84),09:46:23 09-09-2024
+ERROR,81-000.613-R-2,Both lower and upper line could not be found,12:10:40,auto_project(84),09:46:23 09-09-2024
+ERROR,81-000.507-K-2,Both lower and upper line could not be found,12:10:50,auto_project(85),09:46:30 09-09-2024
+ERROR,81-000.507-R-2,Both lower and upper line could not be found,12:10:50,auto_project(85),09:46:30 09-09-2024
+ERROR,81-000.442-K-2,Both lower and upper line could not be found,12:11:00,auto_project(86),09:46:45 09-09-2024
+ERROR,81-000.442-R-2,Both lower and upper line could not be found,12:11:00,auto_project(86),09:46:45 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:11:00,auto_project(86),09:46:47 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:11:10,auto_project(87),09:46:50 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:11:10,auto_project(87),09:46:50 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:11:20,auto_project(88),09:47:04 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:11:20,auto_project(88),09:47:04 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:11:20,auto_project(88),09:47:07 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:11:30,auto_project(89),09:47:16 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:11:30,auto_project(89),09:47:16 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:11:30,auto_project(89),09:47:17 09-09-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(90),10:28:44 09-09-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(90),10:28:44 09-09-2024
+ERROR,81-000.943-K-2,Both lower and upper line could not be found,12:00:10,auto_project(91),10:28:56 09-09-2024
+ERROR,81-000.943-R-2,Both lower and upper line could not be found,12:00:10,auto_project(91),10:28:56 09-09-2024
+ERROR,81-000.833-K-2,Both lower and upper line could not be found,12:00:20,auto_project(92),10:29:07 09-09-2024
+ERROR,81-000.833-R-2,Both lower and upper line could not be found,12:00:20,auto_project(92),10:29:07 09-09-2024
+ERROR,81-000.723-K-2,Both lower and upper line could not be found,12:00:30,auto_project(93),10:29:15 09-09-2024
+ERROR,81-000.723-R-2,Both lower and upper line could not be found,12:00:30,auto_project(93),10:29:15 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:00:30,auto_project(93),10:29:19 09-09-2024
+ERROR,81-000.613-K-2,Both lower and upper line could not be found,12:00:40,auto_project(94),10:29:21 09-09-2024
+ERROR,81-000.613-R-2,Both lower and upper line could not be found,12:00:40,auto_project(94),10:29:21 09-09-2024
+ERROR,81-000.507-K-2,Both lower and upper line could not be found,12:00:50,auto_project(95),10:29:32 09-09-2024
+ERROR,81-000.507-R-2,Both lower and upper line could not be found,12:00:50,auto_project(95),10:29:32 09-09-2024
+ERROR,81-000.442-K-2,Both lower and upper line could not be found,12:01:00,auto_project(96),10:29:43 09-09-2024
+ERROR,81-000.442-R-2,Both lower and upper line could not be found,12:01:00,auto_project(96),10:29:43 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:10,auto_project(97),10:29:48 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:10,auto_project(97),10:29:48 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:20,auto_project(98),10:29:56 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:20,auto_project(98),10:29:56 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:20,auto_project(98),10:30:02 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:30,auto_project(99),10:30:09 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:30,auto_project(99),10:30:09 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:30,auto_project(99),10:30:10 09-09-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(100),11:12:04 09-09-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(100),11:12:04 09-09-2024
+ERROR,81-000.943-K-2,Both lower and upper line could not be found,12:00:10,auto_project(101),11:12:12 09-09-2024
+ERROR,81-000.943-R-2,Both lower and upper line could not be found,12:00:10,auto_project(101),11:12:12 09-09-2024
+ERROR,81-000.833-K-2,Both lower and upper line could not be found,12:00:20,auto_project(102),11:12:22 09-09-2024
+ERROR,81-000.833-R-2,Both lower and upper line could not be found,12:00:20,auto_project(102),11:12:22 09-09-2024
+ERROR,81-000.723-K-2,Both lower and upper line could not be found,12:00:30,auto_project(103),11:12:31 09-09-2024
+ERROR,81-000.723-R-2,Both lower and upper line could not be found,12:00:30,auto_project(103),11:12:33 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:00:30,auto_project(103),11:12:37 09-09-2024
+ERROR,81-000.613-K-2,Both lower and upper line could not be found,12:00:40,auto_project(104),11:12:41 09-09-2024
+ERROR,81-000.613-R-2,Both lower and upper line could not be found,12:00:40,auto_project(104),11:12:41 09-09-2024
+ERROR,81-000.507-K-2,Both lower and upper line could not be found,12:00:50,auto_project(105),11:12:52 09-09-2024
+ERROR,81-000.507-R-2,Both lower and upper line could not be found,12:00:50,auto_project(105),11:12:52 09-09-2024
+ERROR,81-000.442-K-2,Both lower and upper line could not be found,12:01:00,auto_project(106),11:13:05 09-09-2024
+ERROR,81-000.442-R-2,Both lower and upper line could not be found,12:01:00,auto_project(106),11:13:05 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:10,auto_project(107),11:13:12 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:10,auto_project(107),11:13:12 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:20,auto_project(108),11:13:19 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:20,auto_project(108),11:13:19 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:20,auto_project(108),11:13:25 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:30,auto_project(109),11:13:32 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:30,auto_project(109),11:13:32 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:30,auto_project(109),11:13:32 09-09-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(110),11:18:48 09-09-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(110),11:18:48 09-09-2024
+ERROR,81-000.943-K-2,Both lower and upper line could not be found,12:00:10,auto_project(111),11:18:55 09-09-2024
+ERROR,81-000.943-R-2,Both lower and upper line could not be found,12:00:10,auto_project(111),11:18:55 09-09-2024
+ERROR,81-000.833-K-2,Both lower and upper line could not be found,12:00:20,auto_project(112),11:19:02 09-09-2024
+ERROR,81-000.833-R-2,Both lower and upper line could not be found,12:00:20,auto_project(112),11:19:02 09-09-2024
+ERROR,81-000.723-K-2,Both lower and upper line could not be found,12:00:30,auto_project(113),11:19:07 09-09-2024
+ERROR,81-000.723-R-2,Both lower and upper line could not be found,12:00:30,auto_project(113),11:19:07 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:00:30,auto_project(113),11:19:09 09-09-2024
+ERROR,81-000.613-K-2,Both lower and upper line could not be found,12:00:40,auto_project(114),11:19:11 09-09-2024
+ERROR,81-000.613-R-2,Both lower and upper line could not be found,12:00:40,auto_project(114),11:19:11 09-09-2024
+ERROR,81-000.507-K-2,Both lower and upper line could not be found,12:00:50,auto_project(115),11:19:19 09-09-2024
+ERROR,81-000.507-R-2,Both lower and upper line could not be found,12:00:50,auto_project(115),11:19:19 09-09-2024
+ERROR,81-000.442-K-2,Both lower and upper line could not be found,12:01:00,auto_project(116),11:19:26 09-09-2024
+ERROR,81-000.442-R-2,Both lower and upper line could not be found,12:01:00,auto_project(116),11:19:26 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:10,auto_project(117),11:19:30 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:10,auto_project(117),11:19:30 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:20,auto_project(118),11:19:35 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:20,auto_project(118),11:19:35 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:20,auto_project(118),11:19:39 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:30,auto_project(119),11:19:44 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:30,auto_project(119),11:19:44 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:30,auto_project(119),11:19:45 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:40,auto_project(120),11:19:47 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:40,auto_project(120),11:19:47 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:50,auto_project(121),11:19:54 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:50,auto_project(121),11:19:54 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:50,auto_project(121),11:19:57 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:00,auto_project(122),11:20:01 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:00,auto_project(122),11:20:01 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:02:00,auto_project(122),11:20:03 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:10,auto_project(123),11:20:05 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:10,auto_project(123),11:20:05 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:02:10,auto_project(123),11:20:09 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:20,auto_project(124),11:20:11 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:20,auto_project(124),11:20:11 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:02:20,auto_project(124),11:20:15 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:30,auto_project(125),11:20:20 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:30,auto_project(125),11:20:20 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:02:30,auto_project(125),11:20:21 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:40,auto_project(126),11:20:24 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:40,auto_project(126),11:20:24 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:50,auto_project(127),11:20:32 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:50,auto_project(127),11:20:32 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:03:00,auto_project(128),11:20:39 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:03:00,auto_project(128),11:20:39 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:03:10,auto_project(129),11:20:46 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:03:10,auto_project(129),11:20:46 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:03:10,auto_project(129),11:20:48 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:03:20,auto_project(130),11:20:54 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:03:20,auto_project(130),11:20:54 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:03:20,auto_project(130),11:20:54 09-09-2024
+ERROR,81-000.386-K-2,Both lower and upper line could not be found,12:03:30,auto_project(131),11:20:59 09-09-2024
+ERROR,81-000.386-R-2,Both lower and upper line could not be found,12:03:30,auto_project(131),11:20:59 09-09-2024
+ERROR,81-000.277-K-2,Both lower and upper line could not be found,12:03:40,auto_project(132),11:21:07 09-09-2024
+ERROR,81-000.277-R-2,Both lower and upper line could not be found,12:03:40,auto_project(132),11:21:07 09-09-2024
+ERROR,81-000.167-R-2,Both lower and upper line could not be found,12:03:50,auto_project(133),11:21:12 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:03:50,auto_project(133),11:21:15 09-09-2024
+ERROR,81-000.057-K-2,Both lower and upper line could not be found,12:04:00,auto_project(134),11:21:18 09-09-2024
+ERROR,81-000.057-R-2,Both lower and upper line could not be found,12:04:00,auto_project(134),11:21:18 09-09-2024
+ERROR,82-000.047-K-2,Both lower and upper line could not be found,12:04:10,auto_project(135),11:21:26 09-09-2024
+ERROR,82-000.047-R-2,Both lower and upper line could not be found,12:04:10,auto_project(135),11:21:26 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:04:20,auto_project(136),11:21:36 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:05:50,auto_project(145),11:22:48 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:00,auto_project(146),11:22:59 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:10,auto_project(147),11:23:12 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:20,auto_project(148),11:23:22 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:30,auto_project(149),11:23:30 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:40,auto_project(150),11:23:41 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:50,auto_project(151),11:23:51 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:07:30,auto_project(155),11:24:31 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:08:10,auto_project(159),11:25:09 09-09-2024
+ERROR,85-001.604-K-2,Both lower and upper line could not be found,12:08:30,auto_project(161),11:25:25 09-09-2024
+ERROR,85-001.604-R-2,Both lower and upper line could not be found,12:08:30,auto_project(161),11:25:25 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:08:30,auto_project(161),11:25:29 09-09-2024
+ERROR,85-001.452-K-2,Both lower and upper line could not be found,12:08:40,auto_project(162),11:25:32 09-09-2024
+ERROR,85-001.452-R-2,Both lower and upper line could not be found,12:08:40,auto_project(162),11:25:32 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:08:40,auto_project(162),11:25:38 09-09-2024
+ERROR,85-001.365-K-2,Both lower and upper line could not be found,12:08:50,auto_project(163),11:25:46 09-09-2024
+ERROR,85-001.365-R-2,Both lower and upper line could not be found,12:08:50,auto_project(163),11:25:46 09-09-2024
+ERROR,81-001.343-K-2,Both lower and upper line could not be found,12:09:00,auto_project(164),11:25:52 09-09-2024
+ERROR,81-001.343-R-2,Both lower and upper line could not be found,12:09:00,auto_project(164),11:25:52 09-09-2024
+ERROR,81-001.343-K-2,Both lower and upper line could not be found,12:09:10,auto_project(165),11:26:06 09-09-2024
+ERROR,81-001.343-R-2,Both lower and upper line could not be found,12:09:10,auto_project(165),11:26:06 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:09:10,auto_project(165),11:26:07 09-09-2024
+ERROR,81-001.343-K-2,Both lower and upper line could not be found,12:09:20,auto_project(166),11:26:13 09-09-2024
+ERROR,81-001.343-R-2,Both lower and upper line could not be found,12:09:20,auto_project(166),11:26:13 09-09-2024
+ERROR,81-001.336-K-2,Both lower and upper line could not be found,12:09:30,auto_project(167),11:26:26 09-09-2024
+ERROR,81-001.336-R-2,Both lower and upper line could not be found,12:09:30,auto_project(167),11:26:26 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:09:30,auto_project(167),11:26:27 09-09-2024
+ERROR,81-001.246-K-2,Both lower and upper line could not be found,12:09:40,auto_project(168),11:26:34 09-09-2024
+ERROR,81-001.246-R-2,Both lower and upper line could not be found,12:09:40,auto_project(168),11:26:34 09-09-2024
+ERROR,81-001.140-K-2,Both lower and upper line could not be found,12:09:50,auto_project(169),11:26:45 09-09-2024
+ERROR,81-001.140-R-2,Both lower and upper line could not be found,12:09:50,auto_project(169),11:26:45 09-09-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:10:00,auto_project(170),11:26:55 09-09-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:10:00,auto_project(170),11:26:55 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:10:00,auto_project(170),11:26:56 09-09-2024
+ERROR,81-000.943-K-2,Both lower and upper line could not be found,12:10:10,auto_project(171),11:27:04 09-09-2024
+ERROR,81-000.943-R-2,Both lower and upper line could not be found,12:10:10,auto_project(171),11:27:04 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:10:10,auto_project(171),11:27:06 09-09-2024
+ERROR,81-000.833-K-2,Both lower and upper line could not be found,12:10:20,auto_project(172),11:27:12 09-09-2024
+ERROR,81-000.833-R-2,Both lower and upper line could not be found,12:10:20,auto_project(172),11:27:12 09-09-2024
+ERROR,81-000.723-K-2,Both lower and upper line could not be found,12:10:30,auto_project(173),11:27:18 09-09-2024
+ERROR,81-000.723-R-2,Both lower and upper line could not be found,12:10:30,auto_project(173),11:27:18 09-09-2024
+ERROR,81-000.613-K-2,Both lower and upper line could not be found,12:10:40,auto_project(174),11:27:31 09-09-2024
+ERROR,81-000.613-R-2,Both lower and upper line could not be found,12:10:40,auto_project(174),11:27:31 09-09-2024
+ERROR,81-000.507-K-2,Both lower and upper line could not be found,12:10:50,auto_project(175),11:27:38 09-09-2024
+ERROR,81-000.507-R-2,Both lower and upper line could not be found,12:10:50,auto_project(175),11:27:38 09-09-2024
+ERROR,81-000.442-K-2,Both lower and upper line could not be found,12:11:00,auto_project(176),11:27:52 09-09-2024
+ERROR,81-000.442-R-2,Both lower and upper line could not be found,12:11:00,auto_project(176),11:27:52 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:11:00,auto_project(176),11:27:54 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:11:10,auto_project(177),11:27:57 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:11:10,auto_project(177),11:27:57 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:11:20,auto_project(178),11:28:10 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:11:20,auto_project(178),11:28:10 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:11:20,auto_project(178),11:28:13 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:11:30,auto_project(179),11:28:21 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:11:30,auto_project(179),11:28:21 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:11:30,auto_project(179),11:28:22 09-09-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(180),11:49:26 09-09-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(180),11:49:26 09-09-2024
+ERROR,81-000.943-K-2,Both lower and upper line could not be found,12:00:10,auto_project(181),11:49:35 09-09-2024
+ERROR,81-000.943-R-2,Both lower and upper line could not be found,12:00:10,auto_project(181),11:49:35 09-09-2024
+ERROR,81-000.833-K-2,Both lower and upper line could not be found,12:00:20,auto_project(182),11:49:45 09-09-2024
+ERROR,81-000.833-R-2,Both lower and upper line could not be found,12:00:20,auto_project(182),11:49:45 09-09-2024
+ERROR,81-000.723-K-2,Both lower and upper line could not be found,12:00:30,auto_project(183),11:49:52 09-09-2024
+ERROR,81-000.723-R-2,Both lower and upper line could not be found,12:00:30,auto_project(183),11:49:52 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:00:30,auto_project(183),11:49:57 09-09-2024
+ERROR,81-000.613-K-2,Both lower and upper line could not be found,12:00:40,auto_project(184),11:49:59 09-09-2024
+ERROR,81-000.613-R-2,Both lower and upper line could not be found,12:00:40,auto_project(184),11:49:59 09-09-2024
+ERROR,81-000.507-K-2,Both lower and upper line could not be found,12:00:50,auto_project(185),11:50:10 09-09-2024
+ERROR,81-000.507-R-2,Both lower and upper line could not be found,12:00:50,auto_project(185),11:50:10 09-09-2024
+ERROR,81-000.442-K-2,Both lower and upper line could not be found,12:01:00,auto_project(186),11:50:19 09-09-2024
+ERROR,81-000.442-R-2,Both lower and upper line could not be found,12:01:00,auto_project(186),11:50:19 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:10,auto_project(187),11:50:22 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:10,auto_project(187),11:50:22 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:20,auto_project(188),11:50:28 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:20,auto_project(188),11:50:28 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:20,auto_project(188),11:50:32 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:30,auto_project(189),11:50:37 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:30,auto_project(189),11:50:37 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:30,auto_project(189),11:50:38 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:10,auto_project(190),11:53:14 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:10,auto_project(190),11:53:14 09-09-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(191),11:56:21 09-09-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(191),11:56:21 09-09-2024
+ERROR,81-000.998-K-2,Both lower and upper line could not be found,12:00:05,auto_project(192),11:56:29 09-09-2024
+ERROR,81-000.998-R-2,Both lower and upper line could not be found,12:00:05,auto_project(192),11:56:29 09-09-2024
+ERROR,81-000.943-K-2,Both lower and upper line could not be found,12:00:10,auto_project(193),11:56:35 09-09-2024
+ERROR,81-000.943-R-2,Both lower and upper line could not be found,12:00:10,auto_project(193),11:56:35 09-09-2024
+ERROR,81-000.888-K-2,Both lower and upper line could not be found,12:00:15,auto_project(194),11:56:41 09-09-2024
+ERROR,81-000.888-R-2,Both lower and upper line could not be found,12:00:15,auto_project(194),11:56:41 09-09-2024
+ERROR,81-000.833-K-2,Both lower and upper line could not be found,12:00:20,auto_project(195),11:56:47 09-09-2024
+ERROR,81-000.833-R-2,Both lower and upper line could not be found,12:00:20,auto_project(195),11:56:47 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:10,auto_project(196),11:59:46 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:10,auto_project(196),11:59:46 09-09-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:00:00,auto_project(197),12:00:59 09-09-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:00:00,auto_project(197),12:00:59 09-09-2024
+ERROR,81-000.943-K-2,Both lower and upper line could not be found,12:00:10,auto_project(198),12:01:06 09-09-2024
+ERROR,81-000.943-R-2,Both lower and upper line could not be found,12:00:10,auto_project(198),12:01:06 09-09-2024
+ERROR,81-000.833-K-2,Both lower and upper line could not be found,12:00:20,auto_project(199),12:01:14 09-09-2024
+ERROR,81-000.833-R-2,Both lower and upper line could not be found,12:00:20,auto_project(199),12:01:14 09-09-2024
+ERROR,81-000.723-K-2,Both lower and upper line could not be found,12:00:30,auto_project(200),12:01:20 09-09-2024
+ERROR,81-000.723-R-2,Both lower and upper line could not be found,12:00:30,auto_project(200),12:01:20 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:00:30,auto_project(200),12:01:22 09-09-2024
+ERROR,81-000.613-K-2,Both lower and upper line could not be found,12:00:40,auto_project(201),12:01:24 09-09-2024
+ERROR,81-000.613-R-2,Both lower and upper line could not be found,12:00:40,auto_project(201),12:01:24 09-09-2024
+ERROR,81-000.507-K-2,Both lower and upper line could not be found,12:00:50,auto_project(202),12:01:32 09-09-2024
+ERROR,81-000.507-R-2,Both lower and upper line could not be found,12:00:50,auto_project(202),12:01:32 09-09-2024
+ERROR,81-000.442-K-2,Both lower and upper line could not be found,12:01:00,auto_project(203),12:01:39 09-09-2024
+ERROR,81-000.442-R-2,Both lower and upper line could not be found,12:01:00,auto_project(203),12:01:39 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:10,auto_project(204),12:01:43 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:10,auto_project(204),12:01:43 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:20,auto_project(205),12:01:49 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:20,auto_project(205),12:01:49 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:20,auto_project(205),12:01:52 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:30,auto_project(206),12:01:59 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:30,auto_project(206),12:01:59 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:30,auto_project(206),12:02:00 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:40,auto_project(207),12:02:03 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:40,auto_project(207),12:02:03 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:01:50,auto_project(208),12:02:10 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:01:50,auto_project(208),12:02:10 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:01:50,auto_project(208),12:02:14 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:00,auto_project(209),12:02:18 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:00,auto_project(209),12:02:18 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:02:00,auto_project(209),12:02:20 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:10,auto_project(210),12:02:22 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:10,auto_project(210),12:02:22 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:02:10,auto_project(210),12:02:26 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:20,auto_project(211),12:02:28 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:20,auto_project(211),12:02:28 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:02:20,auto_project(211),12:02:33 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:30,auto_project(212),12:02:39 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:30,auto_project(212),12:02:39 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:02:30,auto_project(212),12:02:40 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:40,auto_project(213),12:02:43 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:40,auto_project(213),12:02:43 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:02:50,auto_project(214),12:02:51 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:02:50,auto_project(214),12:02:51 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:03:00,auto_project(215),12:02:58 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:03:00,auto_project(215),12:02:58 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:03:10,auto_project(216),12:03:08 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:03:10,auto_project(216),12:03:08 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:03:10,auto_project(216),12:03:11 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:03:20,auto_project(217),12:03:19 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:03:20,auto_project(217),12:03:19 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:03:20,auto_project(217),12:03:19 09-09-2024
+ERROR,81-000.386-K-2,Both lower and upper line could not be found,12:03:30,auto_project(218),12:03:25 09-09-2024
+ERROR,81-000.386-R-2,Both lower and upper line could not be found,12:03:30,auto_project(218),12:03:25 09-09-2024
+ERROR,81-000.277-K-2,Both lower and upper line could not be found,12:03:40,auto_project(219),12:03:38 09-09-2024
+ERROR,81-000.277-R-2,Both lower and upper line could not be found,12:03:40,auto_project(219),12:03:38 09-09-2024
+ERROR,81-000.167-R-2,Both lower and upper line could not be found,12:03:50,auto_project(220),12:03:43 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:03:50,auto_project(220),12:03:47 09-09-2024
+ERROR,81-000.057-K-2,Both lower and upper line could not be found,12:04:00,auto_project(221),12:03:50 09-09-2024
+ERROR,81-000.057-R-2,Both lower and upper line could not be found,12:04:00,auto_project(221),12:03:50 09-09-2024
+ERROR,82-000.047-K-2,Both lower and upper line could not be found,12:04:10,auto_project(222),12:04:00 09-09-2024
+ERROR,82-000.047-R-2,Both lower and upper line could not be found,12:04:10,auto_project(222),12:04:00 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:04:20,auto_project(223),12:04:11 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:05:50,auto_project(232),12:05:20 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:00,auto_project(233),12:05:26 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:10,auto_project(234),12:05:32 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:20,auto_project(235),12:05:39 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:30,auto_project(236),12:05:45 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:40,auto_project(237),12:05:52 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:06:50,auto_project(238),12:05:59 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:07:30,auto_project(242),12:06:28 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:08:10,auto_project(246),12:06:58 09-09-2024
+ERROR,85-001.604-K-2,Both lower and upper line could not be found,12:08:30,auto_project(248),12:07:11 09-09-2024
+ERROR,85-001.604-R-2,Both lower and upper line could not be found,12:08:30,auto_project(248),12:07:11 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:08:30,auto_project(248),12:07:14 09-09-2024
+ERROR,85-001.452-K-2,Both lower and upper line could not be found,12:08:40,auto_project(249),12:07:16 09-09-2024
+ERROR,85-001.452-R-2,Both lower and upper line could not be found,12:08:40,auto_project(249),12:07:16 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:08:40,auto_project(249),12:07:21 09-09-2024
+ERROR,85-001.365-K-2,Both lower and upper line could not be found,12:08:50,auto_project(250),12:07:27 09-09-2024
+ERROR,85-001.365-R-2,Both lower and upper line could not be found,12:08:50,auto_project(250),12:07:27 09-09-2024
+ERROR,81-001.343-K-2,Both lower and upper line could not be found,12:09:00,auto_project(251),12:07:32 09-09-2024
+ERROR,81-001.343-R-2,Both lower and upper line could not be found,12:09:00,auto_project(251),12:07:32 09-09-2024
+ERROR,81-001.343-K-2,Both lower and upper line could not be found,12:09:10,auto_project(252),12:07:44 09-09-2024
+ERROR,81-001.343-R-2,Both lower and upper line could not be found,12:09:10,auto_project(252),12:07:44 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:09:10,auto_project(252),12:07:44 09-09-2024
+ERROR,81-001.343-K-2,Both lower and upper line could not be found,12:09:20,auto_project(253),12:07:48 09-09-2024
+ERROR,81-001.343-R-2,Both lower and upper line could not be found,12:09:20,auto_project(253),12:07:48 09-09-2024
+ERROR,81-001.336-K-2,Both lower and upper line could not be found,12:09:30,auto_project(254),12:07:59 09-09-2024
+ERROR,81-001.336-R-2,Both lower and upper line could not be found,12:09:30,auto_project(254),12:07:59 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:09:30,auto_project(254),12:08:00 09-09-2024
+ERROR,81-001.246-K-2,Both lower and upper line could not be found,12:09:40,auto_project(255),12:08:05 09-09-2024
+ERROR,81-001.246-R-2,Both lower and upper line could not be found,12:09:40,auto_project(255),12:08:05 09-09-2024
+ERROR,81-001.140-K-2,Both lower and upper line could not be found,12:09:50,auto_project(256),12:08:14 09-09-2024
+ERROR,81-001.140-R-2,Both lower and upper line could not be found,12:09:50,auto_project(256),12:08:14 09-09-2024
+ERROR,81-001.053-K-2,Both lower and upper line could not be found,12:10:00,auto_project(257),12:08:22 09-09-2024
+ERROR,81-001.053-R-2,Both lower and upper line could not be found,12:10:00,auto_project(257),12:08:22 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:10:00,auto_project(257),12:08:22 09-09-2024
+ERROR,81-000.943-K-2,Both lower and upper line could not be found,12:10:10,auto_project(258),12:08:28 09-09-2024
+ERROR,81-000.943-R-2,Both lower and upper line could not be found,12:10:10,auto_project(258),12:08:28 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:10:10,auto_project(258),12:08:30 09-09-2024
+ERROR,81-000.833-K-2,Both lower and upper line could not be found,12:10:20,auto_project(259),12:08:35 09-09-2024
+ERROR,81-000.833-R-2,Both lower and upper line could not be found,12:10:20,auto_project(259),12:08:35 09-09-2024
+ERROR,81-000.723-K-2,Both lower and upper line could not be found,12:10:30,auto_project(260),12:08:40 09-09-2024
+ERROR,81-000.723-R-2,Both lower and upper line could not be found,12:10:30,auto_project(260),12:08:40 09-09-2024
+ERROR,81-000.613-K-2,Both lower and upper line could not be found,12:10:40,auto_project(261),12:08:53 09-09-2024
+ERROR,81-000.613-R-2,Both lower and upper line could not be found,12:10:40,auto_project(261),12:08:53 09-09-2024
+ERROR,81-000.507-K-2,Both lower and upper line could not be found,12:10:50,auto_project(262),12:09:00 09-09-2024
+ERROR,81-000.507-R-2,Both lower and upper line could not be found,12:10:50,auto_project(262),12:09:00 09-09-2024
+ERROR,81-000.442-K-2,Both lower and upper line could not be found,12:11:00,auto_project(263),12:09:14 09-09-2024
+ERROR,81-000.442-R-2,Both lower and upper line could not be found,12:11:00,auto_project(263),12:09:15 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:11:00,auto_project(263),12:09:16 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:11:10,auto_project(264),12:09:19 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:11:10,auto_project(264),12:09:19 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:11:20,auto_project(265),12:09:33 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:11:20,auto_project(265),12:09:33 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:11:20,auto_project(265),12:09:36 09-09-2024
+ERROR,81-000.432-K-2,Both lower and upper line could not be found,12:11:30,auto_project(266),12:09:44 09-09-2024
+ERROR,81-000.432-R-2,Both lower and upper line could not be found,12:11:30,auto_project(266),12:09:44 09-09-2024
+ERROR,Simulation failed,Pf reported execution failure,12:11:30,auto_project(266),12:09:45 09-09-2024

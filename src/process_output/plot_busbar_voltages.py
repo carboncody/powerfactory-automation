@@ -19,17 +19,24 @@ def plot_busbar_voltages(data, name, output_path):
         
         grouped_data[timestamp]['distances'].append(distance)
         grouped_data[timestamp]['voltages'].append(voltage)
+    
+    #print(len(grouped_data[timestamp]))
+
+    #print(len(grouped_data[0]))
+    #colors = plt.cm.get_cmap('tab20', len(data['grouped_data'].unique()))  # Colormap with enough distinct colors
+    #i = 0  # Initialize color index 
 
     # Plot data for each timestamp
     for timestamp, vals in grouped_data.items():
         ax.plot(vals['distances'], vals['voltages'], label=timestamp, marker=".")
+        #i += 1
 
     ax.set_title("Busbar Voltage vs. Distance" + " - " + name)
     ax.set_xlabel("Distance (km)")
     ax.set_ylabel("Voltage (V)")
-    ax.legend()
+    ax.legend(loc='upper left', bbox_to_anchor=(1, 1), ncol=2)
 
     plt.tight_layout()
 
-    plt.savefig(os.path.join(output_path, name + "-busbar_voltages.png"), dpi=300)
+    plt.savefig(os.path.join(output_path, name + "-busbar_voltages.png"), dpi=400)
     plt.close()

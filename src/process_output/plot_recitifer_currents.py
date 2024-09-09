@@ -23,11 +23,15 @@ def plot_recitifer_currents(data, output_path):
         file_path = os.path.join(output_path, f'{rectifier}.png')
         plt.savefig(file_path)
         plt.close()
-        
+    
+    colors = plt.cm.get_cmap('tab20', len(data['rectifier_name'].unique()))  # Colormap with enough distinct colors
+    i = 0  # Initialize color index   
+
     plt.figure()
     for rectifier in data['rectifier_name'].unique():
         rectifier_data = data[data['rectifier_name'] == rectifier]
-        plt.plot(rectifier_data['timestamp [HH:MM:SS]'], rectifier_data['current [A]'], marker='.', label=rectifier)
+        plt.plot(rectifier_data['timestamp [HH:MM:SS]'], rectifier_data['current [A]'], marker='.', color=colors(i), label=rectifier)
+        i += 1
 
     print("Creating current vs. time graph for all rectifiers...")
     plt.title('Current vs Time for All Rectifiers')
@@ -40,5 +44,5 @@ def plot_recitifer_currents(data, output_path):
     # Adjust the legend placement
     plt.legend(loc='upper left', bbox_to_anchor=(1, 1), ncol=1)
     file_path = os.path.join(output_path, 'all_rectifiers.png')
-    plt.savefig(file_path, bbox_inches='tight')
+    plt.savefig(file_path, bbox_inches='tight', dpi=400)
     plt.close()
