@@ -5,18 +5,18 @@ import globals as globals
 def init_pf():
     try:
         # Check if pf_path is set and valid
-        if not globals.pf_path or not os.path.exists(globals.pf_path):
+        if not globals.get_pf_path() or not os.path.exists(globals.get_pf_path()):
             raise ValueError("PowerFactory path is not set or invalid. Please set the correct path in the UI.")
 
         # Add PowerFactory to system path
-        sys.path.append(globals.pf_path)
+        sys.path.append(globals.get_pf_path())
 
         # Try to import PowerFactory
         import powerfactory as pf  # type: ignore
 
         app = pf.GetApplicationExt()
         print(app)
-        projName = globals.init_project_name
+        projName = globals.get_project_name()
 
         # Activate project
         app.ActivateProject(projName)

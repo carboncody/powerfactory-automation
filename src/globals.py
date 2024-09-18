@@ -17,7 +17,7 @@ base_dir = get_base_dir()
 json_file_path = os.path.join(base_dir, 'globals_config.json')
 
 # Load global variables from the JSON file
-def load_globals():
+def load_globals(config):
     if os.path.exists(json_file_path):
         with open(json_file_path, 'r') as f:
             loaded_globals = json.load(f)
@@ -33,7 +33,7 @@ def load_globals():
             if not os.path.isdir(loaded_globals['output_path']):
                 raise ValueError(f"Invalid output_path: {loaded_globals['output_path']} does not exist.")
             
-            return loaded_globals
+            return loaded_globals.get(config)
     else:
         # If no JSON file exists, raise an error to avoid unexpected behavior.
         raise FileNotFoundError(f"{json_file_path} not found. Please provide a valid globals_config.json file.")
@@ -43,14 +43,11 @@ def save_globals(new_globals):
     with open(json_file_path, 'w') as f:
         json.dump(new_globals, f, indent=4)
 
-# Load current globals at runtime
-globals_config = load_globals()
+def get_project_name():
+    return load_globals('init_project_name')
 
-# Access global variables from the loaded configuration
-init_project_name = globals_config.get('init_project_name')
-input_path = globals_config.get('input_path')
-output_path = globals_config.get('output_path')
-pf_path = globals_config.get('pf_path')
+def get_pf_path():
+    return load_globals('pf_path')
 
 def validate_path(path):
     if not isinstance(path, str) or not os.path.isdir(path):
@@ -59,22 +56,29 @@ def validate_path(path):
 
 # Dynamic path calculation based on the current input/output paths
 def get_time_series_json_path():
+    input_path = load_globals('input_path')
     return os.path.join(validate_path(input_path), 'timeseries.json')
 
 def get_main_sim_output_path():
+    output_path = load_globals('output_path')
     return os.path.join(validate_path(output_path), 'main_sim_output.csv')
 
 def get_rectifier_table_output_path():
+    output_path = load_globals('output_path')
     return os.path.join(validate_path(output_path), 'rectifier_table_output.csv')
 
 def get_graphs_path():
+    output_path = load_globals('output_path')
     return os.path.join(validate_path(output_path), 'graphs')
 
 def get_rectifier_graphs_path():
+    output_path = load_globals('output_path')
     return os.path.join(validate_path(output_path), 'graphs', 'rectifier')
 
 def get_sorted_csvs_path():
+    output_path = load_globals('output_path')
     return os.path.join(validate_path(output_path), 'csv')
 
 def get_input_csv_path():
+    input_path = load_globals('input_path')
     return os.path.join(validate_path(input_path), 'example.csv')
