@@ -13,7 +13,7 @@ def list_all_timestamps(data):
     return timestamps
 
 def sim_all():
-    with open(globals.get_time_series_json_path(), 'r') as file:
+    with open(globals.get_output_json_file_path(), 'r') as file:
         data = json.load(file)
 
     return list_all_timestamps(data)

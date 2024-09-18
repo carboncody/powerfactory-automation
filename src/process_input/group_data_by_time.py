@@ -1,4 +1,6 @@
+import os
 import json
+import globals as globals
 
 def group_data_by_time(data):
     # Change the tid column to a string for grouping
@@ -12,9 +14,13 @@ def group_data_by_time(data):
     
     # Convert the dictionary to a JSON string using the custom handler
     grouped_json = json.dumps(grouped_data, indent=4,ensure_ascii=False)
+
+    json_file_path = globals.get_output_json_file_path()
+
+    os.makedirs(os.path.dirname(json_file_path), exist_ok=True)
     
     # Save the JSON string to a file
-    with open('utils/timeseries.json', 'w', encoding='utf-8') as json_file:
+    with open(json_file_path, 'w', encoding='utf-8') as json_file:
         json_file.write(grouped_json)
     
     return grouped_data

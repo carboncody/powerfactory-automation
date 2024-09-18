@@ -1,13 +1,10 @@
 import os
 import csv
 from datetime import datetime
+import globals as globals
 
 def log_failures(type, busbar_name, message, timestamp, project_ref_in_pf='--'):
-    # Get the directory of the current script
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    
-    # Define the path to the logs.csv file relative to the script's directory
-    logs_path = os.path.join(script_dir, 'logs.csv')
+    logs_path = globals.get_logs_csv_path()
     
     # Check if logs.csv exists, if not create it and add headers
     if not os.path.exists(logs_path):

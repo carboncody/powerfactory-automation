@@ -27,7 +27,7 @@ def calculate_specific_timestamps(interval_seconds, data):
 
 
 def sim_all_with_interval(interval_in_seconds):
-    with open(globals.get_time_series_json_path(), 'r') as file:
+    with open(globals.get_output_json_file_path(), 'r') as file:
         data = json.load(file)
 
     return calculate_specific_timestamps(interval_in_seconds, data)

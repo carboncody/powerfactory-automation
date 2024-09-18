@@ -55,10 +55,6 @@ def validate_path(path):
     return path
 
 # Dynamic path calculation based on the current input/output paths
-def get_time_series_json_path():
-    input_path = load_globals('input_path')
-    return os.path.join(validate_path(input_path), 'timeseries.json')
-
 def get_main_sim_output_path():
     output_path = load_globals('output_path')
     return os.path.join(validate_path(output_path), 'main_sim_output.csv')
@@ -82,3 +78,11 @@ def get_sorted_csvs_path():
 def get_input_csv_path():
     input_path = load_globals('input_path')
     return os.path.join(validate_path(input_path), 'example.csv')
+
+def get_logs_csv_path():
+    output_path = load_globals('output_path')
+    return os.path.join(validate_path(output_path), 'logs.csv')
+
+def get_output_json_file_path():
+    output_path = load_globals('output_path')
+    return os.path.join(validate_path(output_path), 'timeseries.json')

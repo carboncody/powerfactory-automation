@@ -267,7 +267,7 @@ def pf_sim_run():
         user=app.GetCurrentUser()
         version = project.CreateVersion('auto_version')
 
-        with open('utils/timeseries.json', 'r') as file:
+        with open(globals.get_output_json_file_path(), 'r') as file:
             data = json.load(file)
         
         counter = 0

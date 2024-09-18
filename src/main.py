@@ -9,17 +9,19 @@ from pf_sim_run.sims.sim_all_with_interval import sim_all_with_interval
 from pf_sim_run.sims.sim_all import sim_all
 from process_output.process_output import process_output
 from pf_sim_run.sims.run_sim import run_sim
-import json
+from process_input.process_input import process_input
 import globals as globals
+import json
 
 def run_simulation(timestamps):
-    with open(globals.get_time_series_json_path(), 'r') as file:
+    with open(globals.get_output_json_file_path(), 'r') as file:
         data = json.load(file)
         
     return run_sim(timestamps, data)
 
 def simulation_callback(mode, params):
     timestamps = []
+    process_input()
     
     # Implement the simulation logic based on mode and params
     if mode == 1:
