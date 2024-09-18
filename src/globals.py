@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 
 # Function to get the correct base directory, considering PyInstaller's extraction
@@ -15,28 +16,27 @@ def get_base_dir():
 base_dir = get_base_dir()
 json_file_path = os.path.join(base_dir, 'globals_config.json')
 
-# Default global variables
-default_globals = {
-    'init_project_name': 'S-Banen(55)',
-    'input_path': os.path.join(base_dir, 'src', 'input'),
-    'output_path': os.path.join(base_dir, 'src', 'output'),
-    'pf_path': r'C:/Program Files/DIgSILENT/PowerFactory 2023/Python/3.9',
-    'simulation_run_count': 5
-}
-
 # Load global variables from the JSON file
 def load_globals():
     if os.path.exists(json_file_path):
         with open(json_file_path, 'r') as f:
             loaded_globals = json.load(f)
-            # Validate paths are correct, fallback to defaults if missing
-            if not isinstance(loaded_globals.get('input_path', ''), str) or not os.path.isdir(loaded_globals['input_path']):
-                loaded_globals['input_path'] = default_globals['input_path']
-            if not isinstance(loaded_globals.get('output_path', ''), str) or not os.path.isdir(loaded_globals['output_path']):
-                loaded_globals['output_path'] = default_globals['output_path']
+            
+            # Validate paths must exist, otherwise raise error
+            if not isinstance(loaded_globals.get('input_path'), str):
+                raise ValueError("input_path is missing or not a valid string in globals_config.json.")
+            if not os.path.isdir(loaded_globals['input_path']):
+                raise ValueError(f"Invalid input_path: {loaded_globals['input_path']} does not exist.")
+            
+            if not isinstance(loaded_globals.get('output_path'), str):
+                raise ValueError("output_path is missing or not a valid string in globals_config.json.")
+            if not os.path.isdir(loaded_globals['output_path']):
+                raise ValueError(f"Invalid output_path: {loaded_globals['output_path']} does not exist.")
+            
             return loaded_globals
     else:
-        return default_globals
+        # If no JSON file exists, raise an error to avoid unexpected behavior.
+        raise FileNotFoundError(f"{json_file_path} not found. Please provide a valid globals_config.json file.")
 
 # Save global variables to the JSON file
 def save_globals(new_globals):
@@ -51,7 +51,6 @@ init_project_name = globals_config.get('init_project_name')
 input_path = globals_config.get('input_path')
 output_path = globals_config.get('output_path')
 pf_path = globals_config.get('pf_path')
-simulation_run_count = globals_config.get('simulation_run_count')
 
 def validate_path(path):
     if not isinstance(path, str) or not os.path.isdir(path):
