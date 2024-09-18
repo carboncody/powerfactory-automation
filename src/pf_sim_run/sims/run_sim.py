@@ -65,8 +65,8 @@ def run_sim(timestamps, data):
 
         # Process output
         ordered_busbar_name_kilometering_current_table = sorted(busbar_name_kilometering_current_table, key=lambda x: x[2])
-        write_to_csv(ordered_busbar_name_kilometering_current_table, ['busbar_name', 'type [R or K]', 'busbar_kilometering [km]', 'voltage [V]', 'timestamp [HH:MM:SS]'], globals.main_sim_output_path)
+        write_to_csv(ordered_busbar_name_kilometering_current_table, ['busbar_name', 'type [R or K]', 'busbar_kilometering [km]', 'voltage [V]', 'timestamp [HH:MM:SS]'], globals.get_main_sim_output_path())
         ordered_rectifier_current_table = sorted(rectifier_current_table, key=lambda x: x[0])
-        write_to_csv(ordered_rectifier_current_table, ['rectifier_name', 'current [A]', 'timestamp [HH:MM:SS]'], globals.rectifier_table_output_path)
+        write_to_csv(ordered_rectifier_current_table, ['rectifier_name', 'current [A]', 'timestamp [HH:MM:SS]'], globals.get_rectifier_table_output_path())
         
         return app

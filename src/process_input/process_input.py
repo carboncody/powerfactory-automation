@@ -7,7 +7,7 @@ from process_input.calc_busbar_pos import calc_busbar_pos
 
 def process_input():
     # Parse the data
-    master_data = parse_csv(globals.input_csv_path)
+    master_data = parse_csv(globals.get_input_csv_path())
 
     # # Find the biggest gap in resolution
     # resolution = calc_resolution(master_data)

@@ -1,100 +1,81 @@
 import os
-import sys
+import json
 
 # Function to get the correct base directory, considering PyInstaller's extraction
 def get_base_dir():
     """Return the base directory path for both development and bundled execution."""
     try:
         # If running in a PyInstaller bundle, use _MEIPASS to get the temp directory
-        return sys._MEIPASS # type: ignore
+        return sys._MEIPASS  # type: ignore
     except AttributeError:
         # If not bundled, use the current directory
         return os.path.dirname(os.path.abspath(__file__))
 
-# Get the absolute path to the directory where globals.py is located
+# JSON file to store global variables
 base_dir = get_base_dir()
+json_file_path = os.path.join(base_dir, 'globals_config.json')
 
-# Global variables with default values
-init_project_name = 'S-Banen(55)'
-input_path = os.path.join(base_dir, 'src', 'input')
-time_series_json_path = os.path.join(input_path, 'timeseries.json')
-output_path = os.path.join(base_dir, 'src', 'output')
-main_sim_output_path = os.path.join(output_path, 'main_sim_output.csv')
-rectifier_table_output_path = os.path.join(output_path, 'rectifier_table_output.csv')
-graphs_path = os.path.join(output_path, 'graphs')
-rectifier_graphs_path = os.path.join(graphs_path, 'rectifier')
-sorted_csvs_path = os.path.join(output_path, 'csv')
-input_csv_path = os.path.join(input_path, 'example.csv')
-pf_path = r'C:/Program Files/DIgSILENT/PowerFactory 2023/Python/3.9'
-simulation_run_count = 5
+# Default global variables
+default_globals = {
+    'init_project_name': 'S-Banen(55)',
+    'input_path': os.path.join(base_dir, 'src', 'input'),
+    'output_path': os.path.join(base_dir, 'src', 'output'),
+    'pf_path': r'C:/Program Files/DIgSILENT/PowerFactory 2023/Python/3.9',
+    'simulation_run_count': 5
+}
 
-# Functions that should be preserved during saving
-def update_globals(new_globals):
-    """Update only the globals that are set in new_globals."""
-    global init_project_name, input_path, output_path, pf_path, simulation_run_count, time_series_json_path, main_sim_output_path, rectifier_table_output_path, graphs_path, rectifier_graphs_path, sorted_csvs_path, input_csv_path
-    
-    # Update each global variable only if it's passed in new_globals
-    init_project_name = new_globals.get('init_project_name', init_project_name)
-    input_path = new_globals.get('input_path', input_path)
-    output_path = new_globals.get('output_path', output_path)
-    pf_path = new_globals.get('pf_path', pf_path)
-    simulation_run_count = new_globals.get('simulation_run_count', simulation_run_count)
-    time_series_json_path = os.path.join(input_path, "timeseries.json")
-    main_sim_output_path = os.path.join(output_path, "main_sim_output.csv")
-    rectifier_table_output_path = os.path.join(output_path, "rectifier_table_output.csv")
-    graphs_path = os.path.join(output_path, "graphs")
-    rectifier_graphs_path = os.path.join(output_path, "graphs\\rectifier")
-    sorted_csvs_path = os.path.join(output_path, "csv")
-    input_csv_path = os.path.join(input_path, 'example.csv')
+# Load global variables from the JSON file
+def load_globals():
+    if os.path.exists(json_file_path):
+        with open(json_file_path, 'r') as f:
+            loaded_globals = json.load(f)
+            # Validate paths are correct, fallback to defaults if missing
+            if not isinstance(loaded_globals.get('input_path', ''), str) or not os.path.isdir(loaded_globals['input_path']):
+                loaded_globals['input_path'] = default_globals['input_path']
+            if not isinstance(loaded_globals.get('output_path', ''), str) or not os.path.isdir(loaded_globals['output_path']):
+                loaded_globals['output_path'] = default_globals['output_path']
+            return loaded_globals
+    else:
+        return default_globals
 
-def save_globals():
-    """Update the global variables in globals.py without overwriting the functions."""
-    globals_file = os.path.join(base_dir, 'globals.py')
+# Save global variables to the JSON file
+def save_globals(new_globals):
+    with open(json_file_path, 'w') as f:
+        json.dump(new_globals, f, indent=4)
 
-    # Read the contents of globals.py
-    with open(globals_file, 'r') as f:
-        lines = f.readlines()
+# Load current globals at runtime
+globals_config = load_globals()
 
-    # Separate variables section from functions section
-    var_lines = []
-    func_lines = []
-    in_func_section = False
-    for line in lines:
-        if line.startswith("def "):  # We assume function definitions start with 'def'
-            in_func_section = True
-        if in_func_section:
-            func_lines.append(line)
-        else:
-            var_lines.append(line)
+# Access global variables from the loaded configuration
+init_project_name = globals_config.get('init_project_name')
+input_path = globals_config.get('input_path')
+output_path = globals_config.get('output_path')
+pf_path = globals_config.get('pf_path')
+simulation_run_count = globals_config.get('simulation_run_count')
 
-    # Dictionary of variable assignments to update
-    updated_vars = {
-        'init_project_name': f"'{init_project_name}'",
-        'input_path': f"r'{input_path}'",
-        'output_path': f"r'{output_path}'",
-        'pf_path': f"r'{pf_path}'",
-        'simulation_run_count': simulation_run_count,
-        'time_series_json_path': f"r'{time_series_json_path}'",
-        'main_sim_output_path': f"r'{main_sim_output_path}'",
-        'rectifier_table_output_path': f"r'{rectifier_table_output_path}'",
-        'graphs_path': f"r'{graphs_path}'",
-        'rectifier_graphs_path': f"r'{rectifier_graphs_path}'",
-        'sorted_csvs_path': f"r'{sorted_csvs_path}'",
-        'input_csv_path': f"r'{input_csv_path}'"
-    }
+def validate_path(path):
+    if not isinstance(path, str) or not os.path.isdir(path):
+        raise ValueError(f"Invalid path: {path}")
+    return path
 
-    # Now modify only the variable section
-    new_var_lines = []
-    for line in var_lines:
-        if any(var in line for var in updated_vars):
-            var_name = line.split('=')[0].strip()  # Get variable name
-            # Replace the line with the updated variable assignment
-            new_var_lines.append(f"{var_name} = {updated_vars[var_name]}\n")
-        else:
-            # Keep the line unchanged if it's not a variable assignment
-            new_var_lines.append(line)
+# Dynamic path calculation based on the current input/output paths
+def get_time_series_json_path():
+    return os.path.join(validate_path(input_path), 'timeseries.json')
 
-    # Write back the updated file, first the variables, then the functions
-    with open(globals_file, 'w') as f:
-        f.writelines(new_var_lines)  # Write the updated variables section
-        f.writelines(func_lines)  # Write the unchanged functions section
+def get_main_sim_output_path():
+    return os.path.join(validate_path(output_path), 'main_sim_output.csv')
+
+def get_rectifier_table_output_path():
+    return os.path.join(validate_path(output_path), 'rectifier_table_output.csv')
+
+def get_graphs_path():
+    return os.path.join(validate_path(output_path), 'graphs')
+
+def get_rectifier_graphs_path():
+    return os.path.join(validate_path(output_path), 'graphs', 'rectifier')
+
+def get_sorted_csvs_path():
+    return os.path.join(validate_path(output_path), 'csv')
+
+def get_input_csv_path():
+    return os.path.join(validate_path(input_path), 'example.csv')

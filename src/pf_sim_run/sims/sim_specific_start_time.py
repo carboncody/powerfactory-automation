@@ -25,7 +25,7 @@ def calculate_specific_timestamps(start_time_str, interval_seconds, total_timest
 
 def sim_specific_start_time(start_time, interval_in_seconds, total_timestamps):
 # def sim_specific_start_time():
-    with open(globals.time_series_json_path, 'r') as file:
+    with open(globals.get_time_series_json_path(), 'r') as file:
         data = json.load(file)
 
     return calculate_specific_timestamps(start_time, interval_in_seconds, total_timestamps, data)

@@ -15,27 +15,27 @@ class GlobalVariablesUI(tk.Frame):
         # Project Name Input
         tk.Label(self, text="Project Name:").pack(fill=tk.X)
         self.project_name_entry = tk.Entry(self)
-        self.project_name_entry.insert(0, globals.init_project_name)
+        # self.project_name_entry.insert(0, globals.init_project_name)
         self.project_name_entry.pack(fill=tk.X, padx=10, pady=5)
 
         # Input Path Selection
         tk.Label(self, text="Input Path:").pack(fill=tk.X)
         self.input_path_entry = tk.Entry(self)
-        self.input_path_entry.insert(0, globals.input_path)
+        # self.input_path_entry.insert(0, globals.input_path)
         self.input_path_entry.pack(fill=tk.X, padx=10, pady=5)
         tk.Button(self, text="Browse", command=self.browse_input_path).pack(pady=5)
 
         # Output Path Selection
         tk.Label(self, text="Output Path:").pack(fill=tk.X)
         self.output_path_entry = tk.Entry(self)
-        self.output_path_entry.insert(0, globals.output_path)
+        # self.output_path_entry.insert(0, globals.output_path)
         self.output_path_entry.pack(fill=tk.X, padx=10, pady=5)
         tk.Button(self, text="Browse", command=self.browse_output_path).pack(pady=5)
 
         # PF Path Selection
         tk.Label(self, text="PowerFactory Path:").pack(fill=tk.X)
         self.pf_path_entry = tk.Entry(self)
-        self.pf_path_entry.insert(0, globals.pf_path)
+        # self.pf_path_entry.insert(0, globals.pf_path)
         self.pf_path_entry.pack(fill=tk.X, padx=10, pady=5)
         tk.Button(self, text="Browse", command=self.browse_pf_path).pack(pady=5)
 
@@ -66,14 +66,14 @@ class GlobalVariablesUI(tk.Frame):
         pf_path = self.pf_path_entry.get()
         project_name = self.project_name_entry.get()
 
-        globals.update_globals({
+        # Update globals and save to JSON
+        globals_config = {
             'init_project_name': project_name,
             'input_path': input_path,
             'output_path': output_path,
             'pf_path': pf_path,
-            'simulation_run_count': globals.simulation_run_count + 1
-        })
-        globals.save_globals()
+        }
+        globals.save_globals(globals_config)
 
-        # Proceed to next step (simulation mode selection)
+        # Proceed to the next step (simulation mode selection)
         self.proceed_callback()

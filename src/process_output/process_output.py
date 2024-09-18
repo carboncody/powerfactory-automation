@@ -46,14 +46,14 @@ def separate_by_number_and_type(result_output_path, output_path):
     return data_by_number_and_type
 
 def process_output():
-    data_by_number_and_type = separate_by_number_and_type(globals.main_sim_output_path, globals.sorted_csvs_path)
+    data_by_number_and_type = separate_by_number_and_type(globals.get_main_sim_output_path(), globals.get_sorted_csvs_path())
 
     for key, array in data_by_number_and_type.items():
         print(f"Creating graphs for {key}...")
-        plot_busbar_voltages(array, key, globals.graphs_path)
+        plot_busbar_voltages(array, key, globals.get_graphs_path())
     
-    # read recitifer_current_data from globals.rectifier_table_output_path
-    rectifier_current_data = pd.read_csv(globals.rectifier_table_output_path)
-    plot_recitifer_currents(rectifier_current_data, globals.rectifier_graphs_path)
+    # read recitifer_current_data from globals.get_rectifier_table_output_path()
+    rectifier_current_data = pd.read_csv(globals.get_rectifier_table_output_path())
+    plot_recitifer_currents(rectifier_current_data, globals.get_rectifier_graphs_path())
     
     print('All processing done. Goodbye!')

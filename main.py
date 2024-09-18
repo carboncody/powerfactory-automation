@@ -13,7 +13,7 @@ import json
 import globals as globals
 
 def run_simulation(timestamps):
-    with open(globals.time_series_json_path, 'r') as file:
+    with open(globals.get_time_series_json_path(), 'r') as file:
         data = json.load(file)
         
     return run_sim(timestamps, data)
