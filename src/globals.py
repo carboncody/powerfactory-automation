@@ -1,19 +1,30 @@
 import os
+import sys
+
+# Function to get the correct base directory, considering PyInstaller's extraction
+def get_base_dir():
+    """Return the base directory path for both development and bundled execution."""
+    try:
+        # If running in a PyInstaller bundle, use _MEIPASS to get the temp directory
+        return sys._MEIPASS # type: ignore
+    except AttributeError:
+        # If not bundled, use the current directory
+        return os.path.dirname(os.path.abspath(__file__))
 
 # Get the absolute path to the directory where globals.py is located
-base_dir = os.path.dirname(os.path.abspath(__file__))
+base_dir = get_base_dir()
 
 # Global variables with default values
 init_project_name = 'S-Banen(55)'
-input_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/src/input'
-time_series_json_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/src/input\timeseries.json'
-output_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/output'
-main_sim_output_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/output\main_sim_output.csv'
-rectifier_table_output_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/output\rectifier_table_output.csv'
-graphs_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/output\graphs'
-rectifier_graphs_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/output\graphs\rectifier'
-sorted_csvs_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/output\csv'
-input_csv_path = r'C:/Users/tempk/Documents/GitHub/ris-sogm/src/input\example.csv'
+input_path = os.path.join(base_dir, 'src', 'input')
+time_series_json_path = os.path.join(input_path, 'timeseries.json')
+output_path = os.path.join(base_dir, 'src', 'output')
+main_sim_output_path = os.path.join(output_path, 'main_sim_output.csv')
+rectifier_table_output_path = os.path.join(output_path, 'rectifier_table_output.csv')
+graphs_path = os.path.join(output_path, 'graphs')
+rectifier_graphs_path = os.path.join(graphs_path, 'rectifier')
+sorted_csvs_path = os.path.join(output_path, 'csv')
+input_csv_path = os.path.join(input_path, 'example.csv')
 pf_path = r'C:/Program Files/DIgSILENT/PowerFactory 2023/Python/3.9'
 simulation_run_count = 5
 
